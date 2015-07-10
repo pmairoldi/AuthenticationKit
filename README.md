@@ -1,0 +1,2 @@
+# AuthenticationKit
+Simplify Authentication
