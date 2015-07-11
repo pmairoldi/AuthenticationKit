@@ -7,24 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0602544F1B50BA9900E96511 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0602544E1B50BA9900E96511 /* Result.framework */; };
 		061B00131B50D3D0001AF0D6 /* ACAccountProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061B000E1B50D3D0001AF0D6 /* ACAccountProviderTests.swift */; };
 		061B00141B50D3D0001AF0D6 /* ACAccountProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061B000E1B50D3D0001AF0D6 /* ACAccountProviderTests.swift */; };
 		061B00151B50D3D0001AF0D6 /* AccountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061B000F1B50D3D0001AF0D6 /* AccountTests.swift */; };
 		061B00161B50D3D0001AF0D6 /* AccountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061B000F1B50D3D0001AF0D6 /* AccountTests.swift */; };
-		061B001E1B50D501001AF0D6 /* Result.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 061BFFE41B50D160001AF0D6 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		061BFFD41B50D041001AF0D6 /* ACAccountProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061BFFD01B50D041001AF0D6 /* ACAccountProvider.swift */; };
 		061BFFD51B50D041001AF0D6 /* ACAccountProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061BFFD01B50D041001AF0D6 /* ACAccountProvider.swift */; };
 		061BFFD81B50D041001AF0D6 /* AuthenticationKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061BFFD21B50D041001AF0D6 /* AuthenticationKit.swift */; };
 		061BFFD91B50D041001AF0D6 /* AuthenticationKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061BFFD21B50D041001AF0D6 /* AuthenticationKit.swift */; };
 		061BFFE01B50D0B7001AF0D6 /* AuthenticationKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 061BFFDE1B50D0B7001AF0D6 /* AuthenticationKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		061BFFE11B50D0B7001AF0D6 /* AuthenticationKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 061BFFDE1B50D0B7001AF0D6 /* AuthenticationKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		061BFFE51B50D160001AF0D6 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 061BFFE41B50D160001AF0D6 /* Result.framework */; };
 		061BFFF01B50D354001AF0D6 /* AuthenticationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5567D5171B4EFF82006D2B3E /* AuthenticationKit.framework */; };
 		061BFFFF1B50D39B001AF0D6 /* AuthenticationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 061BFFB81B50CFCD001AF0D6 /* AuthenticationKit.framework */; };
 		0651E07D1B50D863008DFE02 /* XCTAssertEqual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0651E07C1B50D863008DFE02 /* XCTAssertEqual.swift */; };
 		0651E07E1B50D863008DFE02 /* XCTAssertEqual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0651E07C1B50D863008DFE02 /* XCTAssertEqual.swift */; };
-		06D017761B50BBEA00FD1196 /* Result.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0602544E1B50BA9900E96511 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		06640AF31B5174AD004FE5FE /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06640AEC1B51748F004FE5FE /* Result.framework */; };
+		06640AF41B5174B2004FE5FE /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06640AE81B51748F004FE5FE /* Result.framework */; };
 		55A8A8F11B50070A00063455 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A8A8F01B50070A00063455 /* AppDelegate.swift */; };
 		55A8A8F31B50070A00063455 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A8A8F21B50070A00063455 /* ViewController.swift */; };
 		55A8A8F61B50070A00063455 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55A8A8F41B50070A00063455 /* Main.storyboard */; };
@@ -49,6 +47,62 @@
 			remoteGlobalIDString = 5567D5161B4EFF82006D2B3E;
 			remoteInfo = "AuthenticationKit-iOS";
 		};
+		06640AE71B51748F004FE5FE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 06640ADE1B51748F004FE5FE /* Result.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D45480571A9572F5009D7229;
+			remoteInfo = "Result-Mac";
+		};
+		06640AE91B51748F004FE5FE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 06640ADE1B51748F004FE5FE /* Result.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D45480671A9572F5009D7229;
+			remoteInfo = "Result-MacTests";
+		};
+		06640AEB1B51748F004FE5FE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 06640ADE1B51748F004FE5FE /* Result.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D454807D1A957361009D7229;
+			remoteInfo = "Result-iOS";
+		};
+		06640AED1B51748F004FE5FE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 06640ADE1B51748F004FE5FE /* Result.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D45480871A957362009D7229;
+			remoteInfo = "Result-iOSTests";
+		};
+		06640AEF1B51748F004FE5FE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 06640ADE1B51748F004FE5FE /* Result.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D03579A31B2B788F005D26AE;
+			remoteInfo = "Result-watchOS";
+		};
+		06640AF11B51748F004FE5FE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 06640ADE1B51748F004FE5FE /* Result.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D03579B01B2B78A1005D26AE;
+			remoteInfo = "Result-watchOSTests";
+		};
+		06640AF51B5174CC004FE5FE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 06640ADE1B51748F004FE5FE /* Result.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D45480561A9572F5009D7229;
+			remoteInfo = "Result-Mac";
+		};
+		06640AF71B5174D8004FE5FE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 06640ADE1B51748F004FE5FE /* Result.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D454807C1A957361009D7229;
+			remoteInfo = "Result-iOS";
+		};
 		55A8A9021B50071500063455 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5567D50E1B4EFF82006D2B3E /* Project object */;
@@ -59,26 +113,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		061B001B1B50D49C001AF0D6 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				061B001E1B50D501001AF0D6 /* Result.framework in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		06D017751B50BBE200FD1196 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				06D017761B50BBEA00FD1196 /* Result.framework in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		55A8A9041B50071500063455 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -93,7 +127,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0602544E1B50BA9900E96511 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		061B000E1B50D3D0001AF0D6 /* ACAccountProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACAccountProviderTests.swift; sourceTree = "<group>"; };
 		061B000F1B50D3D0001AF0D6 /* AccountTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountTests.swift; sourceTree = "<group>"; };
 		061B00111B50D3D0001AF0D6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -102,10 +135,10 @@
 		061BFFD21B50D041001AF0D6 /* AuthenticationKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationKit.swift; sourceTree = "<group>"; };
 		061BFFDE1B50D0B7001AF0D6 /* AuthenticationKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticationKit.h; sourceTree = "<group>"; };
 		061BFFDF1B50D0B7001AF0D6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		061BFFE41B50D160001AF0D6 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/Mac/Result.framework; sourceTree = "<group>"; };
 		061BFFEB1B50D354001AF0D6 /* AuthenticationKit-iOS-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AuthenticationKit-iOS-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		061BFFFA1B50D39B001AF0D6 /* AuthenticationKit-Mac-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AuthenticationKit-Mac-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0651E07C1B50D863008DFE02 /* XCTAssertEqual.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTAssertEqual.swift; sourceTree = "<group>"; };
+		06640ADE1B51748F004FE5FE /* Result.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Result.xcodeproj; path = Carthage/Checkouts/Result/Result.xcodeproj; sourceTree = "<group>"; };
 		5505EFE51B4F00CE0081AEF5 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		5567D5171B4EFF82006D2B3E /* AuthenticationKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AuthenticationKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55A8A8EE1B50070A00063455 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,7 +155,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				061BFFE51B50D160001AF0D6 /* Result.framework in Frameworks */,
+				06640AF41B5174B2004FE5FE /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,7 +179,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0602544F1B50BA9900E96511 /* Result.framework in Frameworks */,
+				06640AF31B5174AD004FE5FE /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,10 +235,22 @@
 		061BFFE61B50D2EF001AF0D6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				061BFFE41B50D160001AF0D6 /* Result.framework */,
-				0602544E1B50BA9900E96511 /* Result.framework */,
+				06640ADE1B51748F004FE5FE /* Result.xcodeproj */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		06640ADF1B51748F004FE5FE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				06640AE81B51748F004FE5FE /* Result.framework */,
+				06640AEA1B51748F004FE5FE /* Result-MacTests.xctest */,
+				06640AEC1B51748F004FE5FE /* Result.framework */,
+				06640AEE1B51748F004FE5FE /* Result-iOSTests.xctest */,
+				06640AF01B51748F004FE5FE /* Result.framework */,
+				06640AF21B51748F004FE5FE /* Result-watchOSTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		5567D50D1B4EFF82006D2B3E = {
@@ -275,11 +320,11 @@
 				061BFFB41B50CFCD001AF0D6 /* Frameworks */,
 				061BFFB51B50CFCD001AF0D6 /* Headers */,
 				061BFFB61B50CFCD001AF0D6 /* Resources */,
-				061B001B1B50D49C001AF0D6 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				06640AF61B5174CC004FE5FE /* PBXTargetDependency */,
 			);
 			name = "AuthenticationKit-Mac";
 			productName = "AuthenticationKit-Mac";
@@ -330,11 +375,11 @@
 				5567D5131B4EFF82006D2B3E /* Frameworks */,
 				5567D5141B4EFF82006D2B3E /* Headers */,
 				5567D5151B4EFF82006D2B3E /* Resources */,
-				06D017751B50BBE200FD1196 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				06640AF81B5174D8004FE5FE /* PBXTargetDependency */,
 			);
 			name = "AuthenticationKit-iOS";
 			productName = AuthenticationKit;
@@ -398,6 +443,12 @@
 			mainGroup = 5567D50D1B4EFF82006D2B3E;
 			productRefGroup = 5567D5181B4EFF82006D2B3E /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 06640ADF1B51748F004FE5FE /* Products */;
+					ProjectRef = 06640ADE1B51748F004FE5FE /* Result.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				5567D5161B4EFF82006D2B3E /* AuthenticationKit-iOS */,
@@ -408,6 +459,51 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		06640AE81B51748F004FE5FE /* Result.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Result.framework;
+			remoteRef = 06640AE71B51748F004FE5FE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		06640AEA1B51748F004FE5FE /* Result-MacTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Result-MacTests.xctest";
+			remoteRef = 06640AE91B51748F004FE5FE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		06640AEC1B51748F004FE5FE /* Result.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Result.framework;
+			remoteRef = 06640AEB1B51748F004FE5FE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		06640AEE1B51748F004FE5FE /* Result-iOSTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Result-iOSTests.xctest";
+			remoteRef = 06640AED1B51748F004FE5FE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		06640AF01B51748F004FE5FE /* Result.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Result.framework;
+			remoteRef = 06640AEF1B51748F004FE5FE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		06640AF21B51748F004FE5FE /* Result-watchOSTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Result-watchOSTests.xctest";
+			remoteRef = 06640AF11B51748F004FE5FE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		061BFFB61B50CFCD001AF0D6 /* Resources */ = {
@@ -510,6 +606,16 @@
 			isa = PBXTargetDependency;
 			target = 5567D5161B4EFF82006D2B3E /* AuthenticationKit-iOS */;
 			targetProxy = 061BFFF11B50D354001AF0D6 /* PBXContainerItemProxy */;
+		};
+		06640AF61B5174CC004FE5FE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Result-Mac";
+			targetProxy = 06640AF51B5174CC004FE5FE /* PBXContainerItemProxy */;
+		};
+		06640AF81B5174D8004FE5FE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Result-iOS";
+			targetProxy = 06640AF71B5174D8004FE5FE /* PBXContainerItemProxy */;
 		};
 		55A8A9031B50071500063455 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
