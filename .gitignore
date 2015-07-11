@@ -22,3 +22,5 @@ Pods/
 fastlane/screenshots
 *.itmsp
 *.gcno
+
+fastlane/.env

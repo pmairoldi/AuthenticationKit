@@ -18,14 +18,13 @@ class ViewController: UIViewController {
 //        let provider = ACAccountProvider.Facebook(appId: "10153096457889200", permissions: ["email"], audience: Audience.Everyone)
         let provider = ACAccountProvider.Twitter
         
-        provider.fetchAccounts { (accounts, error) -> Void in
-            
-            if let accounts = accounts {
+        provider.fetchAccounts { (result) -> Void in
+           
+            switch result {
+            case .Success(let accounts):
                 print(accounts)
-            } else if let error = error {
+            case .Failure(let error):
                 print(error)
-            } else {
-                fatalError()
             }
         }
     }

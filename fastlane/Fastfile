@@ -1,0 +1,24 @@
+fastlane_version "1.7.1"
+
+before_all do
+
+end
+
+desc "Runs all the tests"
+lane :test do
+  xctest destination: "platform=iOS Simulator,OS=9.0,name=iPhone 6", scheme: "AuthenticationKit-iOS"
+  xctest destination: "platform=OS X,arch=x86_64", scheme: "AuthenticationKit-Mac"
+end
+
+after_all do |lane|
+  slack(
+    message: "Successfully deployed new App Update."
+  )
+end
+
+error do |lane, exception|
+  slack(
+    message: exception.message,
+    success: false
+  )
+end
