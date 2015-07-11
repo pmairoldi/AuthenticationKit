@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5567D5161B4EFF82006D2B3E"
+               BlueprintIdentifier = "061BFFB71B50CFCD001AF0D6"
                BuildableName = "AuthenticationKit.framework"
-               BlueprintName = "AuthenticationKit"
+               BlueprintName = "AuthenticationKit-Mac"
                ReferencedContainer = "container:AuthenticationKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -26,15 +26,16 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5567D5201B4EFF83006D2B3E"
-               BuildableName = "AuthenticationKitTests.xctest"
-               BlueprintName = "AuthenticationKitTests"
+               BlueprintIdentifier = "061BFFF91B50D39B001AF0D6"
+               BuildableName = "AuthenticationKit-Mac-Tests.xctest"
+               BlueprintName = "AuthenticationKit-Mac-Tests"
                ReferencedContainer = "container:AuthenticationKit.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -42,9 +43,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5567D5161B4EFF82006D2B3E"
+            BlueprintIdentifier = "061BFFB71B50CFCD001AF0D6"
             BuildableName = "AuthenticationKit.framework"
-            BlueprintName = "AuthenticationKit"
+            BlueprintName = "AuthenticationKit-Mac"
             ReferencedContainer = "container:AuthenticationKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -64,9 +65,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5567D5161B4EFF82006D2B3E"
+            BlueprintIdentifier = "061BFFB71B50CFCD001AF0D6"
             BuildableName = "AuthenticationKit.framework"
-            BlueprintName = "AuthenticationKit"
+            BlueprintName = "AuthenticationKit-Mac"
             ReferencedContainer = "container:AuthenticationKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -82,9 +83,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5567D5161B4EFF82006D2B3E"
+            BlueprintIdentifier = "061BFFB71B50CFCD001AF0D6"
             BuildableName = "AuthenticationKit.framework"
-            BlueprintName = "AuthenticationKit"
+            BlueprintName = "AuthenticationKit-Mac"
             ReferencedContainer = "container:AuthenticationKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

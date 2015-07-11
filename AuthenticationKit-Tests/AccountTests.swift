@@ -14,13 +14,22 @@ class AccountTests: XCTestCase {
         super.tearDown()
     }
     
+    func testEqualAccountsFunction() {
+        
+        let account1 = Account(userName: "username", accessToken: "accessToken")
+        let account2 = Account(userName: "username", accessToken: "accessToken")
+        
+        let result = account1 == account2
+        
+        XCTAssert(result, "account1: \(account1), account2: \(account2)")
+    }
+    
     func testAccountsAreEqual() {
         
         let account1 = Account(userName: "username", accessToken: "accessToken")
         let account2 = Account(userName: "username", accessToken: "accessToken")
 
         XCTAssertEqual(account1, account2, "account1: \(account1), account2: \(account2)")
-
     }
     
     func testAccountsAreNotEqual() {

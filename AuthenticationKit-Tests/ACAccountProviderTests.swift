@@ -96,40 +96,40 @@ class ACAccountProviderTests: XCTestCase {
         
         let provider = ACAccountProvider.Facebook(appId: "", permissions: [], audience: Audience.Everyone)
         
-        let expected = ACAccountStore().accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierFacebook)
-        let actual = provider.accountType
+        let expected: ACAccountType = ACAccountStore().accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierFacebook)
+        let actual: ACAccountType = provider.accountType
         
-        XCTAssertEqual(expected, actual, "expected result: \(expected), actual result: \(actual)")
+        XCTAssertEqual(expected.identifier, actual.identifier, "expected result: \(expected), actual result: \(actual)")
     }
     
     func testTwitterAccountType() {
         
         let provider = ACAccountProvider.Twitter
         
-        let expected = ACAccountStore().accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierTwitter)
-        let actual = provider.accountType
+        let expected: ACAccountType = ACAccountStore().accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierTwitter)
+        let actual: ACAccountType = provider.accountType
         
-        XCTAssertEqual(expected, actual, "expected result: \(expected), actual result: \(actual)")
+        XCTAssertEqual(expected.identifier, actual.identifier, "expected result: \(expected), actual result: \(actual)")
     }
     
     func testSinaWeiboAccountType() {
         
         let provider = ACAccountProvider.SinaWeibo
         
-        let expected = ACAccountStore().accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierSinaWeibo)
-        let actual = provider.accountType
+        let expected: ACAccountType = ACAccountStore().accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierSinaWeibo)
+        let actual: ACAccountType = provider.accountType
         
-        XCTAssertEqual(expected, actual, "expected result: \(expected), actual result: \(actual)")
+        XCTAssertEqual(expected.identifier, actual.identifier, "expected result: \(expected), actual result: \(actual)")
     }
     
     func testTencentWeibooAccountType() {
         
         let provider = ACAccountProvider.TencentWeibo(appId: "")
         
-        let expected = ACAccountStore().accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierTencentWeibo)
-        let actual = provider.accountType
+        let expected: ACAccountType = ACAccountStore().accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierTencentWeibo)
+        let actual: ACAccountType = provider.accountType
         
-        XCTAssertEqual(expected, actual, "expected result: \(expected), actual result: \(actual)")
+        XCTAssertEqual(expected.identifier, actual.identifier, "expected result: \(expected), actual result: \(actual)")
     }
     
     // MARK: ACAccountProvider accountOptions tests
@@ -165,12 +165,12 @@ class ACAccountProviderTests: XCTestCase {
     // TODO: Fix this test
     func testTencentWeibooAccountOptions() {
         
-//        let provider = ACAccountProvider.TencentWeibo(appId: "appID")
-//        
-//        let expected: [NSObject : AnyObject]? = [ACTencentWeiboAppIdKey : "appID"]
-//        let actual = provider.accountOptions
-//        
-//        XCTAssertEqualOptional(expected, actual, "expected result: \(expected), actual result: \(actual)")
+        let provider = ACAccountProvider.TencentWeibo(appId: "appID")
+        
+        let expected: [NSObject : AnyObject]? = [ACTencentWeiboAppIdKey : "appID"]
+        let actual = provider.accountOptions
+        
+        XCTAssertEqualOptionalAnyDictionary(expected, actual, "expected result: \(expected), actual result: \(actual)")
     }
     
     // MARK: ACAccountProvider requestAccess tests
@@ -330,6 +330,33 @@ class ACAccountProviderTests: XCTestCase {
         class MockAccountStore: ACAccountStore {
             override func accountsWithAccountType(accountType: ACAccountType!) -> [AnyObject]! {
                 return [MockAccount(accountType: accountType, username: "username", accessToken: nil)]
+            }
+        }
+        
+        let provider = ACAccountProvider.Twitter
+        
+        do {
+            let expected = [Account(userName: "username", accessToken: nil)]
+            let actual = try provider.accounts(MockAccountStore())
+            
+            XCTAssertEqual(expected, actual, "expected result: \(expected), actual result: \(actual)")
+        } catch {
+            XCTFail("should not have recieved an error")
+        }
+    }
+    
+    func testAccountsWithoutCredentials() {
+        
+        class MockAccount: ACAccount {
+            init!(accountType type: ACAccountType, username name: String?) {
+                super.init(accountType: type)
+                username = name
+            }
+        }
+        
+        class MockAccountStore: ACAccountStore {
+            override func accountsWithAccountType(accountType: ACAccountType!) -> [AnyObject]! {
+                return [MockAccount(accountType: accountType, username: "username")]
             }
         }
         
