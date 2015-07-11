@@ -187,15 +187,20 @@ class ACAccountProviderTests: XCTestCase {
 
         let provider = ACAccountProvider.Twitter
         
-        provider.requestAccess(MockAccountStore()) { (granted) -> Void in
+        let success: () -> Void = { () -> Void in
             
-            let expected = true
-            let actual = granted
-            
-            XCTAssertEqual(expected, actual, "expected result: \(expected), actual result: \(actual)")
+            XCTAssert(true)
             ex.fulfill()
         }
         
+        let failure: (error: AccountError) -> Void = { (error) -> Void in
+            
+            XCTFail()
+            ex.fulfill()
+        }
+        
+        provider.requestAccess(MockAccountStore(), success: success, failure: failure)
+
         waitForExpectationsWithTimeout(1, handler: nil)
     }
     
@@ -210,15 +215,20 @@ class ACAccountProviderTests: XCTestCase {
         let ex = expectationWithDescription("ACAccountProvider Tests")
         
         let provider = ACAccountProvider.Twitter
-        
-        provider.requestAccess(MockAccountStore()) { (granted) -> Void in
+
+        let success: () -> Void = { () -> Void in
             
-            let expected = false
-            let actual = granted
-            
-            XCTAssertEqual(expected, actual, "expected result: \(expected), actual result: \(actual)")
+            XCTFail()
             ex.fulfill()
         }
+        
+        let failure: (error: AccountError) -> Void = { (error) -> Void in
+            
+            XCTAssert(true)
+            ex.fulfill()
+        }
+        
+        provider.requestAccess(MockAccountStore(), success: success, failure: failure)
         
         waitForExpectationsWithTimeout(1, handler: nil)
     }
@@ -235,14 +245,19 @@ class ACAccountProviderTests: XCTestCase {
         
         let provider = ACAccountProvider.Twitter
         
-        provider.requestAccess(MockAccountStore()) { (granted) -> Void in
+        let success: () -> Void = { () -> Void in
             
-            let expected = false
-            let actual = granted
-            
-            XCTAssertEqual(expected, actual, "expected result: \(expected), actual result: \(actual)")
+            XCTFail()
             ex.fulfill()
         }
+        
+        let failure: (error: AccountError) -> Void = { (error) -> Void in
+            
+            XCTAssert(true)
+            ex.fulfill()
+        }
+        
+        provider.requestAccess(MockAccountStore(), success: success, failure: failure)
         
         waitForExpectationsWithTimeout(1, handler: nil)
     }
@@ -261,6 +276,7 @@ class ACAccountProviderTests: XCTestCase {
 
         do {
             try provider.accounts(MockAccountStore())
+            
             XCTFail("should not have recieved any accounts and thrown error")
         } catch let error as AccountError {
             
@@ -276,7 +292,6 @@ class ACAccountProviderTests: XCTestCase {
     func testAccountsAndAccessTokens() {
         
         class MockAccount: ACAccount {
-            
             init!(accountType type: ACAccountType, username name: String?, accessToken token: String?) {
                 super.init(accountType: type)
                 username = name
@@ -286,17 +301,13 @@ class ACAccountProviderTests: XCTestCase {
         
         class MockAccountStore: ACAccountStore {
             override func accountsWithAccountType(accountType: ACAccountType!) -> [AnyObject]! {
-                
-                let account = MockAccount(accountType: accountType, username: "username", accessToken: "accessToken")
-                
-                return [account]
+                return [MockAccount(accountType: accountType, username: "username", accessToken: "accessToken")]
             }
         }
         
         let provider = ACAccountProvider.Twitter
         
         do {
-            
             let expected = [Account(userName: "username", accessToken: "accessToken")]
             let actual = try provider.accounts(MockAccountStore())
             
@@ -309,7 +320,6 @@ class ACAccountProviderTests: XCTestCase {
     func testAccountsWithoutAccessTokens() {
         
         class MockAccount: ACAccount {
-            
             init!(accountType type: ACAccountType, username name: String?, accessToken token: String?) {
                 super.init(accountType: type)
                 username = name
@@ -319,17 +329,13 @@ class ACAccountProviderTests: XCTestCase {
         
         class MockAccountStore: ACAccountStore {
             override func accountsWithAccountType(accountType: ACAccountType!) -> [AnyObject]! {
-                
-                let account = MockAccount(accountType: accountType, username: "username", accessToken: nil)
-                
-                return [account]
+                return [MockAccount(accountType: accountType, username: "username", accessToken: nil)]
             }
         }
         
         let provider = ACAccountProvider.Twitter
         
         do {
-            
             let expected = [Account(userName: "username", accessToken: nil)]
             let actual = try provider.accounts(MockAccountStore())
             
@@ -341,59 +347,29 @@ class ACAccountProviderTests: XCTestCase {
     
     // MARK ACAccountProvider fetchAccountsClosure tests
 
-    func testAccessNotGranted() {
-        
-        let provider = ACAccountProvider.Twitter
-    
-        switch provider.fetchAccountsClosure(granted: false) {
-        case (let accounts, let error):
-            
-            if let accounts = accounts {
-                XCTFail("expected result: nil, actual result: \(accounts)")
-            }
-            
-            let expected = AccountError.AccessRequestFailed
-            guard let actual = error else {
-                XCTFail("expected result: \(expected), actual result: nil")
-                return
-            }
-            
-            XCTAssertEqual(expected, actual, "expected result: \(expected), actual result: \(actual)")
-        }
-    }
-    
     func testAccessGrantedAccountError() {
      
         class MockAccountStore: ACAccountStore {
             override func accountsWithAccountType(accountType: ACAccountType!) -> [AnyObject]! {
-                
                 return nil
             }
         }
         
         let provider = ACAccountProvider.Twitter
         
-        switch provider.fetchAccountsClosure(MockAccountStore(), granted: true) {
-        case (let accounts, let error):
-            
-            if let accounts = accounts {
-                XCTFail("expected result: nil, actual result: \(accounts)")
-            }
-            
-            let expected = AccountError.NoAccountsFound
-            guard let actual = error else {
-                XCTFail("expected result: \(expected), actual result: nil")
-                return
-            }
-            
-            XCTAssertEqual(expected, actual, "expected result: \(expected), actual result: \(actual)")
+        do {
+            let accounts = try provider.fetchAccountsClosure(MockAccountStore())
+            XCTFail("expected result: error, actual result: \(accounts)")
+        } catch AccountError.NoAccountsFound {
+            XCTAssert(true)
+        } catch let error {
+            XCTFail("expected result: AccountError.NoAccountsFound, actual result: \(error)")
         }
     }
 
     func testAccessGrantedAccountSuccess() {
         
         class MockAccount: ACAccount {
-            
             init!(accountType type: ACAccountType, username name: String?, accessToken token: String?) {
                 super.init(accountType: type)
                 username = name
@@ -403,31 +379,21 @@ class ACAccountProviderTests: XCTestCase {
         
         class MockAccountStore: ACAccountStore {
             override func accountsWithAccountType(accountType: ACAccountType!) -> [AnyObject]! {
-                
-                let account = MockAccount(accountType: accountType, username: "username", accessToken: "accessToken")
-                
-                return [account]
+                return [MockAccount(accountType: accountType, username: "username", accessToken: "accessToken")]
             }
         }
         
         let provider = ACAccountProvider.Twitter
-        
-        switch provider.fetchAccountsClosure(MockAccountStore(), granted: true) {
-        case (let accounts, let error):
-            
-            if let error = error {
-                XCTFail("expected result: nil, actual result: \(error)")
-            }
-            
-            let expected = [Account(userName: "username", accessToken: "accessToken")]
-            guard let actual = accounts else {
-                XCTFail("expected result: \(expected), actual result: nil")
-                return
-            }
+
+        let expected = [Account(userName: "username", accessToken: "accessToken")]
+
+        do {
+            let actual = try provider.fetchAccountsClosure(MockAccountStore())
             
             XCTAssertEqual(expected, actual, "expected result: \(expected), actual result: \(actual)")
+        } catch let error {
+            XCTFail("expected result: \(expected), actual result: \(error)")
         }
-
     }
 
     // MARK: ACAccountProvider fetchAccounts tests
@@ -438,27 +404,18 @@ class ACAccountProviderTests: XCTestCase {
         
         let provider = ACAccountProvider.Twitter
         
-        // TODO: test require user input
-        provider.fetchAccounts { (accounts, error) -> Void in
+        provider.fetchAccounts { (result) -> Void in
             
-            if let accounts = accounts {
-                XCTFail("expected result: nil, actual result: \(accounts)")
+            switch result {
+            case .Success(let value):
+                XCTFail("expected result: nil, actual result: \(value)")
                 ex.fulfill()
-                return
-            }
-            
-            let expected = AccountError.NoAccountsFound
-            
-            guard let actual = error else {
-                XCTFail("expected result: \(expected), actual result: nil")
+            case .Failure(_):
+                XCTAssert(true)
                 ex.fulfill()
-                return
             }
-            
-            XCTAssertEqual(expected, actual, "expected result: \(expected), actual result: \(actual)")
-            ex.fulfill()
         }
         
-        waitForExpectationsWithTimeout(10, handler: nil)
+        waitForExpectationsWithTimeout(1, handler: nil)
     }
 }

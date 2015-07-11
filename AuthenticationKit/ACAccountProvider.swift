@@ -1,5 +1,6 @@
 import Foundation
 import Accounts
+import Result
 
 extension Audience {
     
@@ -57,19 +58,22 @@ extension ACAccountProvider: ProviderProtocol {
             return [ACTencentWeiboAppIdKey : appId]
         }
     }
-    
-    internal func requestAccess(store: ACAccountStore = ACAccountStore(), completion: (granted: Bool) -> Void) {
+
+    /// If you are getting a 404 error from facebook here, you need to add your application's bundle id to your app on the facebook developer site
+    internal func requestAccess(store: ACAccountStore = ACAccountStore(), success: () -> Void, failure: (error: AccountError) -> Void) {
         
         store.requestAccessToAccountsWithType(accountType, options: accountOptions) { (granted, error) -> Void in
+
+            guard let _ = error else {
+                if granted {
+                    success()
+                } else {
+                    failure(error: AccountError.AccessRequestFailed)
+                }
+                return
+            }
             
-            if let _ = error {
-                /// If you are getting a 404 error from facebook here, you need to add your application's bundle id to your app on the facebook developer site
-                completion(granted: false)
-            }
-                
-            else {
-                completion(granted: granted)
-            }
+            failure(error: AccountError.AccessRequestFailed)
         }
     }
     
@@ -94,28 +98,29 @@ extension ACAccountProvider: ProviderProtocol {
         })
     }
     
-    internal func fetchAccountsClosure(store: ACAccountStore = ACAccountStore(), granted: Bool) -> (accounts: [Account]?, error: AccountError?) {
-        
-        guard granted else {
-            return (accounts: nil, error: AccountError.AccessRequestFailed)
-        }
-        
-        do {
-            let accounts = try self.accounts(store)
-            return (accounts: accounts, error: nil)
-        } catch let error as AccountError {
-            return (accounts: nil, error: error)
-        } catch {
-            // TODO: find way to remove this
-            return (accounts: nil, error: AccountError.NoAccountsFound)
-        }
+    internal func fetchAccountsClosure(store: ACAccountStore = ACAccountStore()) throws -> [Account] {
+        return try self.accounts(store)
     }
     
     /// MARK : ProviderProtocol Methods
-    public func fetchAccounts(completion: (accounts: [Account]?, error: AccountError?) -> Void) {
-        
-        requestAccess { (granted) -> Void in
-            completion(self.fetchAccountsClosure(granted: granted))
+    public func fetchAccounts(completion: (result: Result<[Account], AccountError>) -> Void) {
+    
+        let success: () -> Void = { () -> Void in
+         
+            do {
+                let accounts = try self.fetchAccountsClosure()
+                completion(result: Result.Success(accounts))
+            } catch let error as AccountError {
+                completion(result: Result.Failure(error))
+            } catch {
+                completion(result: Result.Failure(AccountError.NoAccountsFound))
+            }
         }
+        
+        let failure: (error: AccountError) -> Void = { (error) -> Void in
+            completion(result: Result.Failure(error))
+        }
+        
+        requestAccess(success: success, failure: failure)
     }
 }

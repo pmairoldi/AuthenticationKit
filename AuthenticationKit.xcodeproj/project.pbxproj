@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0602544F1B50BA9900E96511 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0602544E1B50BA9900E96511 /* Result.framework */; };
+		06D017761B50BBEA00FD1196 /* Result.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0602544E1B50BA9900E96511 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5505EFE41B4EFFFF0081AEF5 /* ACAccountProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5505EFE31B4EFFFF0081AEF5 /* ACAccountProvider.swift */; };
 		5567D51B1B4EFF82006D2B3E /* AuthenticationKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 5567D51A1B4EFF82006D2B3E /* AuthenticationKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5567D5221B4EFF83006D2B3E /* AuthenticationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5567D5171B4EFF82006D2B3E /* AuthenticationKit.framework */; };
@@ -41,6 +43,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		06D017751B50BBE200FD1196 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				06D017761B50BBEA00FD1196 /* Result.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		55A8A9041B50071500063455 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -55,6 +67,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0602544E1B50BA9900E96511 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		5505EFE31B4EFFFF0081AEF5 /* ACAccountProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACAccountProvider.swift; sourceTree = "<group>"; };
 		5505EFE51B4F00CE0081AEF5 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		5567D5171B4EFF82006D2B3E /* AuthenticationKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AuthenticationKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0602544F1B50BA9900E96511 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +119,7 @@
 		5567D50D1B4EFF82006D2B3E = {
 			isa = PBXGroup;
 			children = (
+				0602544E1B50BA9900E96511 /* Result.framework */,
 				5505EFE51B4F00CE0081AEF5 /* MyPlayground.playground */,
 				5567D5191B4EFF82006D2B3E /* AuthenticationKit */,
 				5567D5251B4EFF83006D2B3E /* AuthenticationKitTests */,
@@ -180,6 +195,7 @@
 				5567D5131B4EFF82006D2B3E /* Frameworks */,
 				5567D5141B4EFF82006D2B3E /* Headers */,
 				5567D5151B4EFF82006D2B3E /* Resources */,
+				06D017751B50BBE200FD1196 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -456,6 +472,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/**";
 				INFOPLIST_FILE = AuthenticationKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -474,6 +491,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/**";
 				INFOPLIST_FILE = AuthenticationKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

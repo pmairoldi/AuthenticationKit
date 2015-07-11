@@ -1,4 +1,5 @@
 import Foundation
+import Result
 
 public enum AccountError: ErrorType {
     case NoAccountsFound
@@ -41,6 +42,6 @@ public func ==(lhs: Account, rhs: Account) -> Bool {
 }
 
 public protocol ProviderProtocol {
-    
-    func fetchAccounts(completion: (accounts: [Account]?, error: AccountError?) -> Void)
+
+    func fetchAccounts(completion: (result: Result<[Account], AccountError>) -> Void)
 }
