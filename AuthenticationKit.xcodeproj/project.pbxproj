@@ -89,20 +89,6 @@
 			remoteGlobalIDString = D03579B01B2B78A1005D26AE;
 			remoteInfo = "Result-watchOSTests";
 		};
-		06640AF51B5174CC004FE5FE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 06640ADE1B51748F004FE5FE /* Result.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D45480561A9572F5009D7229;
-			remoteInfo = "Result-Mac";
-		};
-		06640AF71B5174D8004FE5FE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 06640ADE1B51748F004FE5FE /* Result.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D454807C1A957361009D7229;
-			remoteInfo = "Result-iOS";
-		};
 		55A8A9021B50071500063455 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5567D50E1B4EFF82006D2B3E /* Project object */;
@@ -324,7 +310,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				06640AF61B5174CC004FE5FE /* PBXTargetDependency */,
 			);
 			name = "AuthenticationKit-Mac";
 			productName = "AuthenticationKit-Mac";
@@ -379,7 +364,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				06640AF81B5174D8004FE5FE /* PBXTargetDependency */,
 			);
 			name = "AuthenticationKit-iOS";
 			productName = AuthenticationKit;
@@ -606,16 +590,6 @@
 			isa = PBXTargetDependency;
 			target = 5567D5161B4EFF82006D2B3E /* AuthenticationKit-iOS */;
 			targetProxy = 061BFFF11B50D354001AF0D6 /* PBXContainerItemProxy */;
-		};
-		06640AF61B5174CC004FE5FE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Result-Mac";
-			targetProxy = 06640AF51B5174CC004FE5FE /* PBXContainerItemProxy */;
-		};
-		06640AF81B5174D8004FE5FE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Result-iOS";
-			targetProxy = 06640AF71B5174D8004FE5FE /* PBXContainerItemProxy */;
 		};
 		55A8A9031B50071500063455 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
