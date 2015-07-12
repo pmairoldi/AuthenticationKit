@@ -23,6 +23,12 @@
 		0651E07E1B50D863008DFE02 /* XCTAssertEqual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0651E07C1B50D863008DFE02 /* XCTAssertEqual.swift */; };
 		06640AF31B5174AD004FE5FE /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06640AEC1B51748F004FE5FE /* Result.framework */; };
 		06640AF41B5174B2004FE5FE /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06640AE81B51748F004FE5FE /* Result.framework */; };
+		06640B081B51FBEA004FE5FE /* OAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06640B071B51FBEA004FE5FE /* OAuth.swift */; };
+		06640B091B51FBEA004FE5FE /* OAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06640B071B51FBEA004FE5FE /* OAuth.swift */; };
+		06DF35C61B520F7000B62CEA /* ACAccountExtenstionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DF35C51B520F7000B62CEA /* ACAccountExtenstionTests.swift */; };
+		06DF35C71B520F7000B62CEA /* ACAccountExtenstionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DF35C51B520F7000B62CEA /* ACAccountExtenstionTests.swift */; };
+		06DF35CF1B5212B200B62CEA /* ACAccountExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DF35CE1B5212B200B62CEA /* ACAccountExtension.swift */; };
+		06DF35D01B5212B200B62CEA /* ACAccountExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DF35CE1B5212B200B62CEA /* ACAccountExtension.swift */; };
 		55A8A8F11B50070A00063455 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A8A8F01B50070A00063455 /* AppDelegate.swift */; };
 		55A8A8F31B50070A00063455 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A8A8F21B50070A00063455 /* ViewController.swift */; };
 		55A8A8F61B50070A00063455 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55A8A8F41B50070A00063455 /* Main.storyboard */; };
@@ -125,6 +131,9 @@
 		061BFFFA1B50D39B001AF0D6 /* AuthenticationKit-Mac-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AuthenticationKit-Mac-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0651E07C1B50D863008DFE02 /* XCTAssertEqual.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTAssertEqual.swift; sourceTree = "<group>"; };
 		06640ADE1B51748F004FE5FE /* Result.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Result.xcodeproj; path = Carthage/Checkouts/Result/Result.xcodeproj; sourceTree = "<group>"; };
+		06640B071B51FBEA004FE5FE /* OAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuth.swift; sourceTree = "<group>"; };
+		06DF35C51B520F7000B62CEA /* ACAccountExtenstionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACAccountExtenstionTests.swift; sourceTree = "<group>"; };
+		06DF35CE1B5212B200B62CEA /* ACAccountExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACAccountExtension.swift; sourceTree = "<group>"; };
 		5505EFE51B4F00CE0081AEF5 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		5567D5171B4EFF82006D2B3E /* AuthenticationKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AuthenticationKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55A8A8EE1B50070A00063455 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -184,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				061B000E1B50D3D0001AF0D6 /* ACAccountProviderTests.swift */,
+				06DF35C51B520F7000B62CEA /* ACAccountExtenstionTests.swift */,
 				061B000F1B50D3D0001AF0D6 /* AccountTests.swift */,
 				061B00101B50D3D0001AF0D6 /* SupportingFiles */,
 			);
@@ -202,8 +212,10 @@
 		061BFFCF1B50D041001AF0D6 /* AuthenticationKit */ = {
 			isa = PBXGroup;
 			children = (
+				06DF35CE1B5212B200B62CEA /* ACAccountExtension.swift */,
 				061BFFD01B50D041001AF0D6 /* ACAccountProvider.swift */,
 				061BFFD21B50D041001AF0D6 /* AuthenticationKit.swift */,
+				06640B071B51FBEA004FE5FE /* OAuth.swift */,
 				061BFFDD1B50D0B7001AF0D6 /* SupportingFiles */,
 			);
 			path = AuthenticationKit;
@@ -535,6 +547,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06DF35D01B5212B200B62CEA /* ACAccountExtension.swift in Sources */,
+				06640B091B51FBEA004FE5FE /* OAuth.swift in Sources */,
 				061BFFD91B50D041001AF0D6 /* AuthenticationKit.swift in Sources */,
 				061BFFD51B50D041001AF0D6 /* ACAccountProvider.swift in Sources */,
 			);
@@ -546,6 +560,7 @@
 			files = (
 				061B00131B50D3D0001AF0D6 /* ACAccountProviderTests.swift in Sources */,
 				0651E07D1B50D863008DFE02 /* XCTAssertEqual.swift in Sources */,
+				06DF35C61B520F7000B62CEA /* ACAccountExtenstionTests.swift in Sources */,
 				061B00151B50D3D0001AF0D6 /* AccountTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -556,6 +571,7 @@
 			files = (
 				061B00141B50D3D0001AF0D6 /* ACAccountProviderTests.swift in Sources */,
 				0651E07E1B50D863008DFE02 /* XCTAssertEqual.swift in Sources */,
+				06DF35C71B520F7000B62CEA /* ACAccountExtenstionTests.swift in Sources */,
 				061B00161B50D3D0001AF0D6 /* AccountTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -564,6 +580,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06DF35CF1B5212B200B62CEA /* ACAccountExtension.swift in Sources */,
+				06640B081B51FBEA004FE5FE /* OAuth.swift in Sources */,
 				061BFFD81B50D041001AF0D6 /* AuthenticationKit.swift in Sources */,
 				061BFFD41B50D041001AF0D6 /* ACAccountProvider.swift in Sources */,
 			);

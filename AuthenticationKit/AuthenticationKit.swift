@@ -15,7 +15,7 @@ public enum Audience {
 
 public struct Account {
     
-    let userName: String
+    let username: String
     let accessToken: String?
 }
 
@@ -23,25 +23,13 @@ extension Account: Equatable { }
 
 public func ==(lhs: Account, rhs: Account) -> Bool {
     
-    let userNameEqual = lhs.userName == rhs.userName
+    let userNameEqual = lhs.username == rhs.username
+    let accessTokenEqual = lhs.accessToken == rhs.accessToken
     
-    if let lhsAccessToken = lhs.accessToken, let rhsAccessToken = rhs.accessToken {
-        
-        if lhsAccessToken == rhsAccessToken {
-            return userNameEqual
-        } else {
-            return false
-        }
-    } else if let _ = lhs.accessToken {
-        return false
-    } else if let _ = rhs.accessToken {
-        return false
-    } else {
-        return userNameEqual
-    }
+    return userNameEqual && accessTokenEqual
 }
 
 public protocol ProviderProtocol {
-
+    
     func fetchAccounts(completion: (result: Result<[Account], AccountError>) -> Void)
 }

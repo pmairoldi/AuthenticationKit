@@ -15,11 +15,46 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-//        let provider = ACAccountProvider.Facebook(appId: "10153096457889200", permissions: ["email"], audience: Audience.Everyone)
-        let provider = ACAccountProvider.Twitter
+        let twitter = ACAccountProvider.Twitter
         
-        provider.fetchAccounts { (result) -> Void in
+        twitter.fetchAccounts { (result) -> Void in
            
+            switch result {
+            case .Success(let accounts):
+                print(accounts)
+            case .Failure(let error):
+                print(error)
+            }
+        }
+        
+        let facebook = ACAccountProvider.Facebook(appId: "10153096457889200", permissions: ["email"], audience: Audience.Everyone)
+
+        facebook.fetchAccounts { (result) -> Void in
+            
+            switch result {
+            case .Success(let accounts):
+                print(accounts)
+            case .Failure(let error):
+                print(error)
+            }
+        }
+   
+        let sinaWeibo = ACAccountProvider.SinaWeibo
+        
+        sinaWeibo.fetchAccounts { (result) -> Void in
+            
+            switch result {
+            case .Success(let accounts):
+                print(accounts)
+            case .Failure(let error):
+                print(error)
+            }
+        }
+        
+        let tencentWeibo = ACAccountProvider.TencentWeibo(appId: "")
+        
+        tencentWeibo.fetchAccounts { (result) -> Void in
+            
             switch result {
             case .Success(let accounts):
                 print(accounts)

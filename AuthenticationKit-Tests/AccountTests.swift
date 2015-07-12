@@ -16,8 +16,8 @@ class AccountTests: XCTestCase {
     
     func testEqualAccountsFunction() {
         
-        let account1 = Account(userName: "username", accessToken: "accessToken")
-        let account2 = Account(userName: "username", accessToken: "accessToken")
+        let account1 = Account(username: "username", accessToken: "accessToken")
+        let account2 = Account(username: "username", accessToken: "accessToken")
         
         let result = account1 == account2
         
@@ -26,16 +26,16 @@ class AccountTests: XCTestCase {
     
     func testAccountsAreEqual() {
         
-        let account1 = Account(userName: "username", accessToken: "accessToken")
-        let account2 = Account(userName: "username", accessToken: "accessToken")
+        let account1 = Account(username: "username", accessToken: "accessToken")
+        let account2 = Account(username: "username", accessToken: "accessToken")
 
         XCTAssertEqual(account1, account2, "account1: \(account1), account2: \(account2)")
     }
     
     func testAccountsAreNotEqual() {
         
-        let account1 = Account(userName: "username", accessToken: "accessToken")
-        let account2 = Account(userName: "username", accessToken: "")
+        let account1 = Account(username: "username", accessToken: "accessToken")
+        let account2 = Account(username: "username", accessToken: "")
         
         XCTAssertNotEqual(account1, account2, "account1: \(account1), account2: \(account2)")
         
@@ -43,24 +43,24 @@ class AccountTests: XCTestCase {
     
     func testAccountsAccessTokensAreNotEqualLHS() {
         
-        let account1 = Account(userName: "username", accessToken: "accessToken")
-        let account2 = Account(userName: "username", accessToken: nil)
+        let account1 = Account(username: "username", accessToken: "accessToken")
+        let account2 = Account(username: "username", accessToken: nil)
         
         XCTAssertNotEqual(account1, account2, "account1: \(account1), account2: \(account2)")
     }
     
     func testAccountsAccessTokensAreNotEqualRHS() {
         
-        let account1 = Account(userName: "username", accessToken: nil)
-        let account2 = Account(userName: "username", accessToken: "accessToken")
+        let account1 = Account(username: "username", accessToken: nil)
+        let account2 = Account(username: "username", accessToken: "accessToken")
         
         XCTAssertNotEqual(account1, account2, "account1: \(account1), account2: \(account2)")
     }
     
     func testAccountAccessTokensAreNil() {
         
-        let account1 = Account(userName: "username", accessToken: nil)
-        let account2 = Account(userName: "username", accessToken: nil)
+        let account1 = Account(username: "username", accessToken: nil)
+        let account2 = Account(username: "username", accessToken: nil)
         
         XCTAssertEqual(account1, account2, "account1: \(account1), account2: \(account2)")
     }

@@ -1,5 +1,6 @@
 import Foundation
 import Accounts
+import Social
 import Result
 
 extension Audience {
@@ -17,6 +18,8 @@ extension Audience {
     }
 }
 
+// TODO: TencentWeibo support needs testing. I am unable to get an appId
+// TODO: add linkedin for os x
 public enum ACAccountProvider {
     case Facebook(appId: String, permissions: [String], audience: Audience)
     case Twitter
@@ -58,12 +61,12 @@ extension ACAccountProvider: ProviderProtocol {
             return [ACTencentWeiboAppIdKey : appId]
         }
     }
-
+    
     /// If you are getting a 404 error from facebook here, you need to add your application's bundle id to your app on the facebook developer site
     internal func requestAccess(store: ACAccountStore = ACAccountStore(), success: () -> Void, failure: (error: AccountError) -> Void) {
         
         store.requestAccessToAccountsWithType(accountType, options: accountOptions) { (granted, error) -> Void in
-
+            
             guard let _ = error else {
                 if granted {
                     success()
@@ -77,36 +80,42 @@ extension ACAccountProvider: ProviderProtocol {
         }
     }
     
+    internal func mapAccounts(accounts: [ACAccountDetails]) -> [Account] {
+        
+        return accounts.reduce([Account](), combine: { (accumulator, element) in
+            
+            do {
+                let account = try element.fetchAccountDetails()
+                
+                var newAccumulator = accumulator
+                newAccumulator.append(account)
+                
+                return newAccumulator
+            } catch {
+                return accumulator
+            }
+        })
+    }
+
     internal func accounts(store: ACAccountStore = ACAccountStore()) throws -> [Account] {
         
-        guard let accounts = store.accountsWithAccountType(accountType) as! [ACAccount]? else {
+        guard let accounts = store.accountsWithAccountType(accountType) as! [ACAccountDetails]? where accounts.count > 0 else {
             throw AccountError.NoAccountsFound
         }
         
-        /// TODO: does it make sense to return an account without an access token??
-        return accounts.map({ (element) -> Account in
-            
-            guard let credential = element.credential else {
-                return Account(userName: element.username, accessToken: nil)
-            }
-            
-            guard let accessToken = credential.oauthToken else {
-                return Account(userName: element.username, accessToken: nil)
-            }
-            
-            return Account(userName: element.username, accessToken: accessToken)
-        })
+        return mapAccounts(accounts)
     }
     
     internal func fetchAccountsClosure(store: ACAccountStore = ACAccountStore()) throws -> [Account] {
         return try self.accounts(store)
     }
     
-    /// MARK : ProviderProtocol Methods
+    // MARK : ProviderProtocol Methods
+
     public func fetchAccounts(completion: (result: Result<[Account], AccountError>) -> Void) {
-    
+        
         let success: () -> Void = { () -> Void in
-         
+            
             do {
                 let accounts = try self.fetchAccountsClosure()
                 completion(result: Result.Success(accounts))
