@@ -24,7 +24,6 @@ class ACAccountExtenstionTests: XCTestCase {
     }
     
     // MARK: serviceType tests
-    
     func testFacebookServiceType() {
         
         class MockAccount: ACAccount {
@@ -155,7 +154,6 @@ class ACAccountExtenstionTests: XCTestCase {
     }
     
     // MARK: fetchAccountDetails tests
-    
     func testFetchTwitterDetails() {
         
         class MockRequest: NSURLRequest {
@@ -165,7 +163,7 @@ class ACAccountExtenstionTests: XCTestCase {
             }
         }
         
-        class MockAccount: ACAccountDetails {
+        class MockAccount: ACAccountExtension {
             init(accountType type: ACAccountType, username name: String, accessToken token: String?) {
                 super.init(accountType: type)
                 username = name
@@ -199,7 +197,7 @@ class ACAccountExtenstionTests: XCTestCase {
             }
         }
         
-        class MockAccount: ACAccountDetails {
+        class MockAccount: ACAccountExtension {
             init(accountType type: ACAccountType, username name: String, accessToken token: String?) {
                 super.init(accountType: type)
                 username = name
@@ -226,7 +224,7 @@ class ACAccountExtenstionTests: XCTestCase {
 
     func testFetchDefaultDetails() {
         
-        class MockAccount: ACAccountDetails {
+        class MockAccount: ACAccountExtension {
             init(accountType type: ACAccountType, username name: String, accessToken token: String?) {
                 super.init(accountType: type)
                 username = name
@@ -247,7 +245,6 @@ class ACAccountExtenstionTests: XCTestCase {
     }
 
     // MARK: preparedRequest tests
-    
     func testInvalidRequest() {
         //TODO: can't test since preparedURLRequest hangs on tests
     }
@@ -257,7 +254,6 @@ class ACAccountExtenstionTests: XCTestCase {
     }
     
     // MARK: fetchAdditionalDetails tests
-    
     func testSuccessfulFetchAdditionalDetails() {
         
         class MockRequest: NSURLRequest {
@@ -267,7 +263,7 @@ class ACAccountExtenstionTests: XCTestCase {
             }
         }
         
-        class MockAccount: ACAccountDetails {
+        class MockAccount: ACAccountExtension {
             init(accountType type: ACAccountType, username name: String) {
                 super.init(accountType: type)
                 username = name
@@ -300,7 +296,7 @@ class ACAccountExtenstionTests: XCTestCase {
             }
         }
         
-        class MockAccount: ACAccountDetails {
+        class MockAccount: ACAccountExtension {
             init(accountType type: ACAccountType, username name: String) {
                 super.init(accountType: type)
                 username = name
@@ -323,10 +319,9 @@ class ACAccountExtenstionTests: XCTestCase {
     }
     
     // MARK: fetchDefaultDetails tests
-    
     func testSuccessfulFetchDefaultDetails() {
         
-        class MockAccount: ACAccountDetails {
+        class MockAccount: ACAccountExtension {
             init(accountType type: ACAccountType, username name: String, accessToken token: String?) {
                 super.init(accountType: type)
                 username = name
@@ -349,7 +344,7 @@ class ACAccountExtenstionTests: XCTestCase {
  
     func testFailedFetchDefaultDetails() {
         
-        class MockAccount: ACAccountDetails {
+        class MockAccount: ACAccountExtension {
             init(accountType type: ACAccountType, username name: String, accessToken token: String?) {
                 super.init(accountType: type)
                 username = name

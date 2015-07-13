@@ -24,7 +24,6 @@ class ACAccountProviderTests: XCTestCase {
     }
     
     // MARK: Audience facebook extension tests
-    
     func testFacebookEveryoneAudience() {
         
         let expected = ACFacebookAudienceEveryone
@@ -50,7 +49,6 @@ class ACAccountProviderTests: XCTestCase {
     }
     
     // MARK: accountIdentifier tests
-    
     func testFacebookAccountIdentifier() {
         
         let provider = ACAccountProvider.Facebook(appId: "appID", permissions: ["email"], audience: Audience.Everyone)
@@ -92,7 +90,6 @@ class ACAccountProviderTests: XCTestCase {
     }
     
     // MARK: accountType tests
-    
     func testFacebookAccountType() {
         
         let provider = ACAccountProvider.Facebook(appId: "", permissions: [], audience: Audience.Everyone)
@@ -134,15 +131,14 @@ class ACAccountProviderTests: XCTestCase {
     }
     
     // MARK: accountOptions tests
-    
     func testFacebookAccountOptions() {
         
         let provider = ACAccountProvider.Facebook(appId: "appID", permissions: ["email"], audience: Audience.Everyone)
         
-        let expected = [ACFacebookAppIdKey : "appID", ACFacebookPermissionsKey : ["email"], ACFacebookAudienceKey : ACFacebookAudienceEveryone]
+        let expected: [NSObject : AnyObject]? = [ACFacebookAppIdKey : "appID", ACFacebookPermissionsKey : ["email"], ACFacebookAudienceKey : ACFacebookAudienceEveryone]
         let actual = provider.accountOptions
         
-        XCTAssertEqualOptional(expected, actual, "expected result: \(expected), actual result: \(actual)")
+        XCTAssertEqualOptionalAnyDictionary(expected, actual, "expected result: \(expected), actual result: \(actual)")
     }
     
     func testTwitterAccountOptions() {
@@ -174,7 +170,6 @@ class ACAccountProviderTests: XCTestCase {
     }
     
     // MARK: requestAccess tests
-    
     func testRequestAccessSuccess() {
         
         class MockAccountStore: ACAccountStore {
@@ -262,11 +257,10 @@ class ACAccountProviderTests: XCTestCase {
         waitForExpectationsWithTimeout(1, handler: nil)
     }
     
-    // MARK: mapAccounts tests
-    
+    // MARK: map tests
     func testValidAccountConversion() {
         
-        class MockAccount: ACAccountDetails {
+        class MockAccount: ACAccountExtension {
             init(accountType type: ACAccountType, username name: String?, accessToken token: String?) {
                 super.init(accountType: type)
                 username = name
@@ -279,14 +273,14 @@ class ACAccountProviderTests: XCTestCase {
         let provider = ACAccountProvider.Facebook(appId: "appID", permissions: ["email"], audience: Audience.Everyone)
         
         let expected = [Account(username: "username", accessToken: "accessToken")]
-        let actual = provider.mapAccounts(accounts)
+        let actual = provider.map(accounts)
         
         XCTAssertEqual(expected, actual, "expected result: \(expected), actual result: \(actual)")
     }
     
     func testInvalidAccountConversion() {
         
-        class MockAccount: ACAccountDetails {
+        class MockAccount: ACAccountExtension {
             override init(accountType type: ACAccountType) {
                 super.init(accountType: type)
             }
@@ -297,13 +291,12 @@ class ACAccountProviderTests: XCTestCase {
         let provider = ACAccountProvider.Facebook(appId: "appID", permissions: ["email"], audience: Audience.Everyone)
         
         let expected = [Account]()
-        let actual = provider.mapAccounts(accounts)
+        let actual = provider.map(accounts)
         
         XCTAssertEqual(expected, actual, "expected result: \(expected), actual result: \(actual)")
     }
     
     // MARK: accounts tests
-    
     func testNoAccounts() {
         
         class MockAccountStore: ACAccountStore {
@@ -331,7 +324,7 @@ class ACAccountProviderTests: XCTestCase {
     
     func testAccounts() {
         
-        class MockAccount: ACAccountDetails {
+        class MockAccount: ACAccountExtension {
             init(accountType type: ACAccountType, username name: String?, accessToken token: String?) {
                 super.init(accountType: type)
                 username = name
@@ -359,7 +352,6 @@ class ACAccountProviderTests: XCTestCase {
     }
     
     // MARK: fetchAccountsClosure tests
-    
     func testAccessGrantedAccountError() {
         
         class MockAccountStore: ACAccountStore {
@@ -382,7 +374,7 @@ class ACAccountProviderTests: XCTestCase {
     
     func testAccessGrantedAccountSuccess() {
         
-        class MockAccount: ACAccountDetails {
+        class MockAccount: ACAccountExtension {
             init(accountType type: ACAccountType, username name: String?, accessToken token: String?) {
                 super.init(accountType: type)
                 username = name
@@ -410,7 +402,6 @@ class ACAccountProviderTests: XCTestCase {
     }
     
     // MARK: fetchAccounts tests
-    
     func testFetchAccounts() {
         
         //        let ex = expectationWithDescription("ACAccountProvider Tests")

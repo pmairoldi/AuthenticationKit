@@ -2,7 +2,7 @@ import Foundation
 import Accounts
 import Social
 
-public class ACAccountDetails: ACAccount {
+public class ACAccountExtension: ACAccount {
     
     public func fetchAccountDetails() throws -> Account {
         
