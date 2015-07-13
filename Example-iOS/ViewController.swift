@@ -6,53 +6,29 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let success: (accounts: [Account]) -> Void = { (accounts) -> Void in
+            print(accounts)
+        }
+        
+        let failure: (error: AccountError) -> Void = { (error) -> Void in
+            print(error)
+        }
+        
         let twitter = ACAccountProvider.Twitter
         
-        twitter.fetchAccounts { (result) -> Void in
-            
-            switch result {
-            case .Success(let accounts):
-                print(accounts)
-            case .Failure(let error):
-                print(error)
-            }
-        }
+        twitter.fetchAccounts(failure, success: success)
         
-        let facebook = ACAccountProvider.Facebook(appId: "10153096457889200", permissions: ["email"], audience: Audience.Everyone)
-        
-        facebook.fetchAccounts { (result) -> Void in
-            
-            switch result {
-            case .Success(let accounts):
-                print(accounts)
-            case .Failure(let error):
-                print(error)
-            }
-        }
-        
-        let sinaWeibo = ACAccountProvider.SinaWeibo
-        
-        sinaWeibo.fetchAccounts { (result) -> Void in
-            
-            switch result {
-            case .Success(let accounts):
-                print(accounts)
-            case .Failure(let error):
-                print(error)
-            }
-        }
-        
-        let tencentWeibo = ACAccountProvider.TencentWeibo(appId: "")
-        
-        tencentWeibo.fetchAccounts { (result) -> Void in
-            
-            switch result {
-            case .Success(let accounts):
-                print(accounts)
-            case .Failure(let error):
-                print(error)
-            }
-        }
+//        let facebook = ACAccountProvider.Facebook(appId: "10153096457889200", permissions: ["email"], audience: Audience.Everyone)
+//        
+//        facebook.fetchAccounts(failure, success: success)
+//        
+//        let sinaWeibo = ACAccountProvider.SinaWeibo
+//        
+//        sinaWeibo.fetchAccounts(failure, success: success)
+//        
+//        let tencentWeibo = ACAccountProvider.TencentWeibo(appId: "")
+//        
+//        tencentWeibo.fetchAccounts(failure, success: success)
     }
     
     override func didReceiveMemoryWarning() {

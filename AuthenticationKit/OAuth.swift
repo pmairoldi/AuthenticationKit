@@ -9,7 +9,6 @@ public struct OAuth {
         }
         
         guard  let authorization = headers["Authorization"] else {
-            
             throw AccountError.NoAccessToken
         }
         

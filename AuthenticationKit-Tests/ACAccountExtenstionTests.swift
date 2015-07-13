@@ -1,11 +1,3 @@
-//
-//  ACAccountExtenstionTests.swift
-//  AuthenticationKit
-//
-//  Created by Pierre-Marc Airoldi on 2015-07-11.
-//  Copyright © 2015 Pierre-Marc Airoldi. All rights reserved.
-//
-
 import XCTest
 import Accounts
 import Social
@@ -111,7 +103,6 @@ class ACAccountExtenstionTests: XCTestCase {
     func testServiceTypeUnknown() {
         
         class MockAccountType: ACAccountType {
-           
             override var identifier: String! {
                 return "unknown"
             }
@@ -157,21 +148,18 @@ class ACAccountExtenstionTests: XCTestCase {
     func testFetchTwitterDetails() {
         
         class MockRequest: NSURLRequest {
-            
             override var allHTTPHeaderFields: [String : String]? {
                 return ["Authorization" : "oauth_token=\"accessToken\""]
             }
         }
         
-        class MockAccount: ACAccountExtension {
+        class MockAccount: ACAccount {
             init(accountType type: ACAccountType, username name: String, accessToken token: String?) {
                 super.init(accountType: type)
                 username = name
                 credential = ACAccountCredential(OAuthToken: token, tokenSecret: nil)
             }
-            
-            // TODO: remove this override when the function doesnt hang
-            override func peparedRequest(request: SLRequest) throws -> NSURLRequest {
+            override func preparedRequest(request: SLRequest) throws -> NSURLRequest {
                  return MockRequest()
             }
         }
@@ -191,21 +179,18 @@ class ACAccountExtenstionTests: XCTestCase {
     func testFetchSinaWeiboDetails() {
         
         class MockRequest: NSURLRequest {
-            
             override var allHTTPHeaderFields: [String : String]? {
                 return ["Authorization" : "oauth_token=\"accessToken\""]
             }
         }
         
-        class MockAccount: ACAccountExtension {
+        class MockAccount: ACAccount {
             init(accountType type: ACAccountType, username name: String, accessToken token: String?) {
                 super.init(accountType: type)
                 username = name
                 credential = ACAccountCredential(OAuthToken: token, tokenSecret: nil)
             }
-            
-            // TODO: remove this override when the function doesnt hang
-            override func peparedRequest(request: SLRequest) throws -> NSURLRequest {
+            override func preparedRequest(request: SLRequest) throws -> NSURLRequest {
                 return MockRequest()
             }
         }
@@ -224,7 +209,7 @@ class ACAccountExtenstionTests: XCTestCase {
 
     func testFetchDefaultDetails() {
         
-        class MockAccount: ACAccountExtension {
+        class MockAccount: ACAccount {
             init(accountType type: ACAccountType, username name: String, accessToken token: String?) {
                 super.init(accountType: type)
                 username = name
@@ -245,32 +230,78 @@ class ACAccountExtenstionTests: XCTestCase {
     }
 
     // MARK: preparedRequest tests
+    // FIX: SLRequest can't be subclassed properly in swift might need to do objc runtime stuff to test
     func testInvalidRequest() {
-        //TODO: can't test since preparedURLRequest hangs on tests
+
+//        class MockRequest: SLRequest {
+//            override init() {
+//                super.init()
+//            }
+//            override func preparedURLRequest() -> NSURLRequest! {
+//                return nil
+//            }
+//        }
+//        
+//        class MockAccount: ACAccount {
+//            override init(accountType type: ACAccountType) {
+//                super.init(accountType: type)
+//            }
+//        }
+//        
+//        let account = ACAccount(accountType: ACAccountStore().accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierFacebook))
+//        
+//        do {
+//            try account.preparedRequest(MockRequest())
+//            XCTFail()
+//        } catch {
+//            XCTAssert(true)
+//        }
     }
 
+    // FIX: SLRequest can't be subclassed properly in swift might need to do objc runtime stuff to test
     func testValidRequest() {
-        //TODO: can't test since preparedURLRequest hangs on tests
+        
+//        class MockRequest: SLRequest {
+//            override init() {
+//                super.init()
+//            }
+//            override func preparedURLRequest() -> NSURLRequest! {
+//                return NSURLRequest()
+//            }
+//        }
+//        
+//        class MockAccount: ACAccount {
+//            override init(accountType type: ACAccountType) {
+//                super.init(accountType: type)
+//            }
+//        }
+//        
+//        let account = MockAccount(accountType: ACAccountStore().accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierFacebook))
+//        
+//        do {
+//            let expected = NSURLRequest()
+//            let actual = try account.preparedRequest(MockRequest())
+//            XCTAssertEqual(expected, actual, "expected result: \(expected), actual result: \(actual)")
+//        } catch {
+//            XCTFail()
+//        }
     }
     
     // MARK: fetchAdditionalDetails tests
     func testSuccessfulFetchAdditionalDetails() {
         
         class MockRequest: NSURLRequest {
-            
             override var allHTTPHeaderFields: [String : String]? {
                 return ["Authorization" : "oauth_token=\"accessToken\""]
             }
         }
         
-        class MockAccount: ACAccountExtension {
+        class MockAccount: ACAccount {
             init(accountType type: ACAccountType, username name: String) {
                 super.init(accountType: type)
                 username = name
             }
-            
-            // TODO: remove this override when the function doesnt hang
-            override func peparedRequest(request: SLRequest) throws -> NSURLRequest {
+            override func preparedRequest(request: SLRequest) throws -> NSURLRequest {
                 return MockRequest()
             }
         }
@@ -290,20 +321,17 @@ class ACAccountExtenstionTests: XCTestCase {
     func testFailedOAuthFetchAdditionalDetails() {
         
         class MockRequest: NSURLRequest {
-            
             override var allHTTPHeaderFields: [String : String]? {
                 return nil
             }
         }
         
-        class MockAccount: ACAccountExtension {
+        class MockAccount: ACAccount {
             init(accountType type: ACAccountType, username name: String) {
                 super.init(accountType: type)
                 username = name
             }
-            
-            // TODO: remove this override when the function doesnt hang
-            override func peparedRequest(request: SLRequest) throws -> NSURLRequest {
+            override func preparedRequest(request: SLRequest) throws -> NSURLRequest {
                 return MockRequest()
             }
         }
@@ -321,7 +349,7 @@ class ACAccountExtenstionTests: XCTestCase {
     // MARK: fetchDefaultDetails tests
     func testSuccessfulFetchDefaultDetails() {
         
-        class MockAccount: ACAccountExtension {
+        class MockAccount: ACAccount {
             init(accountType type: ACAccountType, username name: String, accessToken token: String?) {
                 super.init(accountType: type)
                 username = name
@@ -344,7 +372,7 @@ class ACAccountExtenstionTests: XCTestCase {
  
     func testFailedFetchDefaultDetails() {
         
-        class MockAccount: ACAccountExtension {
+        class MockAccount: ACAccount {
             init(accountType type: ACAccountType, username name: String, accessToken token: String?) {
                 super.init(accountType: type)
                 username = name

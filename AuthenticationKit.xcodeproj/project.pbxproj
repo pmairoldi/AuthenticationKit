@@ -19,8 +19,6 @@
 		061BFFFF1B50D39B001AF0D6 /* AuthenticationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 061BFFB81B50CFCD001AF0D6 /* AuthenticationKit.framework */; };
 		0651E07D1B50D863008DFE02 /* XCTAssertEqual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0651E07C1B50D863008DFE02 /* XCTAssertEqual.swift */; };
 		0651E07E1B50D863008DFE02 /* XCTAssertEqual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0651E07C1B50D863008DFE02 /* XCTAssertEqual.swift */; };
-		06640AF31B5174AD004FE5FE /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06640AEC1B51748F004FE5FE /* Result.framework */; };
-		06640AF41B5174B2004FE5FE /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06640AE81B51748F004FE5FE /* Result.framework */; };
 		06640B081B51FBEA004FE5FE /* OAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06640B071B51FBEA004FE5FE /* OAuth.swift */; };
 		06640B091B51FBEA004FE5FE /* OAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06640B071B51FBEA004FE5FE /* OAuth.swift */; };
 		06DF35C61B520F7000B62CEA /* ACAccountExtenstionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DF35C51B520F7000B62CEA /* ACAccountExtenstionTests.swift */; };
@@ -32,6 +30,10 @@
 		550507CE1B540D23009EA49C /* ACAccountProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550507C81B540D23009EA49C /* ACAccountProvider.swift */; };
 		550507D01B540D3E009EA49C /* ACAccountProvider-Mac.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550507CF1B540D3E009EA49C /* ACAccountProvider-Mac.swift */; };
 		550507D61B540EFF009EA49C /* ACAccountProviderTestsMac.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550507D51B540EFF009EA49C /* ACAccountProviderTestsMac.swift */; };
+		551AACA91B542A4200C69400 /* AuthenticationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5567D5171B4EFF82006D2B3E /* AuthenticationKit.framework */; };
+		551AACAA1B542A4200C69400 /* AuthenticationKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5567D5171B4EFF82006D2B3E /* AuthenticationKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		551AACB31B542A5D00C69400 /* AuthenticationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 061BFFB81B50CFCD001AF0D6 /* AuthenticationKit.framework */; };
+		551AACB41B542A5D00C69400 /* AuthenticationKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 061BFFB81B50CFCD001AF0D6 /* AuthenticationKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		55A61F751B5412C700E0A1D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A61F741B5412C700E0A1D8 /* AppDelegate.swift */; };
 		55A61F771B5412C700E0A1D8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A61F761B5412C700E0A1D8 /* ViewController.swift */; };
 		55A61F791B5412C700E0A1D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55A61F781B5412C700E0A1D8 /* Assets.xcassets */; };
@@ -41,6 +43,8 @@
 		55A61F8D1B54133500E0A1D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55A61F8B1B54133500E0A1D8 /* Main.storyboard */; };
 		55A61F8F1B54133500E0A1D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55A61F8E1B54133500E0A1D8 /* Assets.xcassets */; };
 		55A61F921B54133500E0A1D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55A61F901B54133500E0A1D8 /* LaunchScreen.storyboard */; };
+		55AD1C1E1B54351C001241A9 /* OAuthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AD1C1D1B54351C001241A9 /* OAuthTests.swift */; };
+		55AD1C1F1B54351C001241A9 /* OAuthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AD1C1D1B54351C001241A9 /* OAuthTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,7 +104,46 @@
 			remoteGlobalIDString = D03579B01B2B78A1005D26AE;
 			remoteInfo = "Result-watchOSTests";
 		};
+		551AACAB1B542A4200C69400 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5567D50E1B4EFF82006D2B3E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5567D5161B4EFF82006D2B3E;
+			remoteInfo = "AuthenticationKit-iOS";
+		};
+		551AACB51B542A5D00C69400 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5567D50E1B4EFF82006D2B3E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 061BFFB71B50CFCD001AF0D6;
+			remoteInfo = "AuthenticationKit-Mac";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		551AACAD1B542A4300C69400 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				551AACAA1B542A4200C69400 /* AuthenticationKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		551AACB71B542A5D00C69400 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				551AACB41B542A5D00C69400 /* AuthenticationKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		061B000E1B50D3D0001AF0D6 /* ACAccountProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACAccountProviderTests.swift; sourceTree = "<group>"; };
@@ -135,6 +178,7 @@
 		55A61F8E1B54133500E0A1D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55A61F911B54133500E0A1D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		55A61F931B54133500E0A1D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55AD1C1D1B54351C001241A9 /* OAuthTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,7 +186,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06640AF41B5174B2004FE5FE /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,7 +209,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06640AF31B5174AD004FE5FE /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,6 +216,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				551AACB31B542A5D00C69400 /* AuthenticationKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +224,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				551AACA91B542A4200C69400 /* AuthenticationKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,6 +238,7 @@
 				061B000E1B50D3D0001AF0D6 /* ACAccountProviderTests.swift */,
 				06DF35C51B520F7000B62CEA /* ACAccountExtenstionTests.swift */,
 				061B000F1B50D3D0001AF0D6 /* AccountTests.swift */,
+				55AD1C1D1B54351C001241A9 /* OAuthTests.swift */,
 				061B00101B50D3D0001AF0D6 /* SupportingFiles */,
 			);
 			path = "AuthenticationKit-Tests";
@@ -340,6 +385,7 @@
 				061BFFB41B50CFCD001AF0D6 /* Frameworks */,
 				061BFFB51B50CFCD001AF0D6 /* Headers */,
 				061BFFB61B50CFCD001AF0D6 /* Resources */,
+				55AD1C211B5436CE001241A9 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -394,6 +440,7 @@
 				5567D5131B4EFF82006D2B3E /* Frameworks */,
 				5567D5141B4EFF82006D2B3E /* Headers */,
 				5567D5151B4EFF82006D2B3E /* Resources */,
+				55AD1C201B5436B3001241A9 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -411,10 +458,12 @@
 				55A61F6E1B5412C700E0A1D8 /* Sources */,
 				55A61F6F1B5412C700E0A1D8 /* Frameworks */,
 				55A61F701B5412C700E0A1D8 /* Resources */,
+				551AACB71B542A5D00C69400 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				551AACB61B542A5D00C69400 /* PBXTargetDependency */,
 			);
 			name = "Example-Mac";
 			productName = "Example-Mac";
@@ -428,10 +477,12 @@
 				55A61F811B54133500E0A1D8 /* Sources */,
 				55A61F821B54133500E0A1D8 /* Frameworks */,
 				55A61F831B54133500E0A1D8 /* Resources */,
+				551AACAD1B542A4300C69400 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				551AACAC1B542A4200C69400 /* PBXTargetDependency */,
 			);
 			name = "Example-iOS";
 			productName = "Example-iOS";
@@ -592,6 +643,35 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		55AD1C201B5436B3001241A9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "TAGS=\"TODO:|FIX:\"\nERRORTAG=\"ERROR:\"\nfind \"${SRCROOT}\" \\( -name \"*.h\" -or -name \"*.m\" -or -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$|($ERRORTAG).*\\$\" | perl -p -e \"s/($TAGS)/ warning: \\$1/\" | perl -p -e \"s/($ERRORTAG)/ error: \\$1/\"";
+		};
+		55AD1C211B5436CE001241A9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "TAGS=\"TODO:|FIX:\"\nERRORTAG=\"ERROR:\"\nfind \"${SRCROOT}\" \\( -name \"*.h\" -or -name \"*.m\" -or -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$|($ERRORTAG).*\\$\" | perl -p -e \"s/($TAGS)/ warning: \\$1/\" | perl -p -e \"s/($ERRORTAG)/ error: \\$1/\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		061BFFB31B50CFCD001AF0D6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -611,6 +691,7 @@
 			files = (
 				061B00131B50D3D0001AF0D6 /* ACAccountProviderTests.swift in Sources */,
 				0651E07D1B50D863008DFE02 /* XCTAssertEqual.swift in Sources */,
+				55AD1C1E1B54351C001241A9 /* OAuthTests.swift in Sources */,
 				06DF35C61B520F7000B62CEA /* ACAccountExtenstionTests.swift in Sources */,
 				061B00151B50D3D0001AF0D6 /* AccountTests.swift in Sources */,
 			);
@@ -625,6 +706,7 @@
 				0651E07E1B50D863008DFE02 /* XCTAssertEqual.swift in Sources */,
 				06DF35C71B520F7000B62CEA /* ACAccountExtenstionTests.swift in Sources */,
 				061B00161B50D3D0001AF0D6 /* AccountTests.swift in Sources */,
+				55AD1C1F1B54351C001241A9 /* OAuthTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -670,6 +752,16 @@
 			isa = PBXTargetDependency;
 			target = 5567D5161B4EFF82006D2B3E /* AuthenticationKit-iOS */;
 			targetProxy = 061BFFF11B50D354001AF0D6 /* PBXContainerItemProxy */;
+		};
+		551AACAC1B542A4200C69400 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5567D5161B4EFF82006D2B3E /* AuthenticationKit-iOS */;
+			targetProxy = 551AACAB1B542A4200C69400 /* PBXContainerItemProxy */;
+		};
+		551AACB61B542A5D00C69400 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 061BFFB71B50CFCD001AF0D6 /* AuthenticationKit-Mac */;
+			targetProxy = 551AACB51B542A5D00C69400 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -730,6 +822,7 @@
 		061BFFC91B50CFCD001AF0D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -752,6 +845,7 @@
 		061BFFCA1B50CFCD001AF0D6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -888,7 +982,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -910,7 +1004,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -933,6 +1027,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "Example-Mac/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
@@ -948,6 +1043,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "Example-Mac/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
@@ -961,6 +1057,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "Example-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pierremarcairoldi.Example-iOS";
@@ -972,6 +1071,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "Example-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pierremarcairoldi.Example-iOS";

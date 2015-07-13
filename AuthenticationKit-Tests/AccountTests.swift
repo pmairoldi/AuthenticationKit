@@ -1,4 +1,3 @@
-import Foundation
 import XCTest
 @testable import AuthenticationKit
 
@@ -38,7 +37,6 @@ class AccountTests: XCTestCase {
         let account2 = Account(username: "username", accessToken: "")
         
         XCTAssertNotEqual(account1, account2, "account1: \(account1), account2: \(account2)")
-        
     }
     
     func testAccountsAccessTokensAreNotEqualLHS() {

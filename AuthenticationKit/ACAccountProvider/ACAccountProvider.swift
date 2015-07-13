@@ -1,7 +1,6 @@
 import Foundation
 import Accounts
 import Social
-import Result
 
 extension Audience {
     
@@ -35,25 +34,25 @@ public enum ACAccountProvider {
 extension ACAccountProvider: ProviderProtocol {
     
     // MARK: ProviderProtocol Methods
-    public func fetchAccounts(completion: (result: Result<[Account], AccountError>) -> Void) {
-        
+    public func fetchAccounts(failure: (error: AccountError) -> Void, success: (accounts: [Account]) -> Void) {
+    
         let success: () -> Void = { () -> Void in
             
             do {
                 let accounts = try self.fetchAccountsClosure()
-                completion(result: Result.Success(accounts))
+                success(accounts: accounts)
             } catch let error as AccountError {
-                completion(result: Result.Failure(error))
+                failure(error: error)
             } catch {
-                completion(result: Result.Failure(AccountError.NoAccountsFound))
+               failure(error: AccountError.NoAccountsFound)
             }
         }
         
         let failure: (error: AccountError) -> Void = { (error) -> Void in
-            completion(result: Result.Failure(error))
+            failure(error: error)
         }
         
-        requestAccess(success: success, failure: failure)
+        requestAccess(failure: failure, success: success)
     }
 }
 
@@ -66,7 +65,7 @@ extension ACAccountProvider {
     }
     
     /// If you are getting a 404 error from facebook here, you need to add your application's bundle id to your app on the facebook developer site
-    internal func requestAccess(store: ACAccountStore = ACAccountStore(), success: () -> Void, failure: (error: AccountError) -> Void) {
+    internal func requestAccess(store: ACAccountStore = ACAccountStore(), failure: (error: AccountError) -> Void, success: () -> Void) {
         
         store.requestAccessToAccountsWithType(accountType, options: accountOptions) { (granted, error) -> Void in
             
@@ -83,12 +82,12 @@ extension ACAccountProvider {
         }
     }
     
-    internal func map(accounts: [ACAccountExtension]) -> [Account] {
+    internal func map<T: ACAccountExtension>(accounts: [T]) -> [Account] {
         
         return accounts.reduce([Account](), combine: { (accumulator, element) in
             
             do {
-                let account = try element.fetchAccountDetails()
+                let account: Account = try element.fetchAccountDetails()
                 
                 var newAccumulator = accumulator
                 newAccumulator.append(account)
@@ -102,7 +101,7 @@ extension ACAccountProvider {
     
     internal func accounts(store: ACAccountStore = ACAccountStore()) throws -> [Account] {
         
-        guard let accounts = store.accountsWithAccountType(accountType) as! [ACAccountExtension]? where accounts.count > 0 else {
+        guard let accounts = store.accountsWithAccountType(accountType) as! [ACAccount]? where accounts.count > 0 else {
             throw AccountError.NoAccountsFound
         }
         

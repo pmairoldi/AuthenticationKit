@@ -2,9 +2,17 @@ import Foundation
 import Accounts
 import Social
 
-public class ACAccountExtension: ACAccount {
+protocol ACAccountExtension {
     
-    public func fetchAccountDetails() throws -> Account {
+    func fetchAccountDetails() throws -> Account
+    func preparedRequest(request: SLRequest) throws -> NSURLRequest
+    func fetchAdditionalDetails(url: String) throws -> Account
+    func fetchDefaultDetails() throws -> Account
+}
+
+extension ACAccount: ACAccountExtension {
+    
+    func fetchAccountDetails() throws -> Account {
         
         switch try self.serviceType() {
         case SLServiceTypeTwitter:
@@ -16,7 +24,7 @@ public class ACAccountExtension: ACAccount {
         }
     }
     
-    internal func peparedRequest(request: SLRequest) throws -> NSURLRequest {
+    func preparedRequest(request: SLRequest) throws -> NSURLRequest {
         
         guard let preparedRequest = request.preparedURLRequest() else {
             throw AccountError.NoAccessToken
@@ -25,20 +33,20 @@ public class ACAccountExtension: ACAccount {
         return preparedRequest
     }
     
-    internal func fetchAdditionalDetails(url: String) throws -> Account {
-    
+    func fetchAdditionalDetails(url: String) throws -> Account {
+        
         let url = NSURL(string: url)
         let serviceType = try self.serviceType()
         
         let request = SLRequest(forServiceType: serviceType, requestMethod: .GET, URL: url, parameters: nil)
         request.account = self
         
-        let accessToken = try OAuth.fetchToken(peparedRequest(request))
+        let accessToken = try OAuth.fetchToken(preparedRequest(request))
         
         return Account(username: self.username, accessToken: accessToken)
     }
     
-    internal func fetchDefaultDetails() throws -> Account {
+    func fetchDefaultDetails() throws -> Account {
         
         guard let credential = self.credential, let accessToken = credential.oauthToken else {
             throw AccountError.NoAccessToken

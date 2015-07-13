@@ -1,11 +1,3 @@
-//
-//  ACAccountProviderMacTests.swift
-//  AuthenticationKit
-//
-//  Created by Pierre-Marc Airoldi on 2015-07-13.
-//  Copyright © 2015 Pierre-Marc Airoldi. All rights reserved.
-//
-
 import XCTest
 import Accounts
 @testable import AuthenticationKit

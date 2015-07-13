@@ -1,11 +1,3 @@
-//
-//  AuthenticationKitTests.swift
-//  AuthenticationKitTests
-//
-//  Created by Pierre-Marc Airoldi on 2015-07-09.
-//  Copyright © 2015 Pierre-Marc Airoldi. All rights reserved.
-//
-
 import XCTest
 import Accounts
 import Social
@@ -194,7 +186,7 @@ class ACAccountProviderTests: XCTestCase {
             ex.fulfill()
         }
         
-        provider.requestAccess(MockAccountStore(), success: success, failure: failure)
+        provider.requestAccess(MockAccountStore(), failure: failure, success: success)
         
         waitForExpectationsWithTimeout(1, handler: nil)
     }
@@ -223,7 +215,7 @@ class ACAccountProviderTests: XCTestCase {
             ex.fulfill()
         }
         
-        provider.requestAccess(MockAccountStore(), success: success, failure: failure)
+        provider.requestAccess(MockAccountStore(), failure: failure, success: success)
         
         waitForExpectationsWithTimeout(1, handler: nil)
     }
@@ -252,7 +244,7 @@ class ACAccountProviderTests: XCTestCase {
             ex.fulfill()
         }
         
-        provider.requestAccess(MockAccountStore(), success: success, failure: failure)
+        provider.requestAccess(MockAccountStore(), failure: failure, success: success)
         
         waitForExpectationsWithTimeout(1, handler: nil)
     }
@@ -260,7 +252,7 @@ class ACAccountProviderTests: XCTestCase {
     // MARK: map tests
     func testValidAccountConversion() {
         
-        class MockAccount: ACAccountExtension {
+        class MockAccount: ACAccount {
             init(accountType type: ACAccountType, username name: String?, accessToken token: String?) {
                 super.init(accountType: type)
                 username = name
@@ -280,7 +272,7 @@ class ACAccountProviderTests: XCTestCase {
     
     func testInvalidAccountConversion() {
         
-        class MockAccount: ACAccountExtension {
+        class MockAccount: ACAccount {
             override init(accountType type: ACAccountType) {
                 super.init(accountType: type)
             }
@@ -324,7 +316,7 @@ class ACAccountProviderTests: XCTestCase {
     
     func testAccounts() {
         
-        class MockAccount: ACAccountExtension {
+        class MockAccount: ACAccount {
             init(accountType type: ACAccountType, username name: String?, accessToken token: String?) {
                 super.init(accountType: type)
                 username = name
@@ -374,7 +366,7 @@ class ACAccountProviderTests: XCTestCase {
     
     func testAccessGrantedAccountSuccess() {
         
-        class MockAccount: ACAccountExtension {
+        class MockAccount: ACAccount {
             init(accountType type: ACAccountType, username name: String?, accessToken token: String?) {
                 super.init(accountType: type)
                 username = name
@@ -402,25 +394,25 @@ class ACAccountProviderTests: XCTestCase {
     }
     
     // MARK: fetchAccounts tests
+    // FIX: needs to accecpt alert to succeed. Move to UI Tests
     func testFetchAccounts() {
         
-        //        let ex = expectationWithDescription("ACAccountProvider Tests")
-        //
-        //        let provider = ACAccountProvider.Twitter
-        //                XCUIApplication().launch()
-        //
-        //        provider.fetchAccounts { (result) -> Void in
-        //
-        //            switch result {
-        //            case .Success(let value):
-        //                XCTFail("expected result: nil, actual result: \(value)")
-        //                ex.fulfill()
-        //            case .Failure(_):
-        //                XCTAssert(true)
-        //                ex.fulfill()
-        //            }
-        //        }
-        //
-        //        waitForExpectationsWithTimeout(1, handler: nil)
+//        let ex = expectationWithDescription("ACAccountProvider Tests")
+//        
+//        let provider = ACAccountProvider.Twitter
+//        
+//        let success: (accounts: [Account]) -> Void = { (accounts) -> Void in
+//            XCTFail("expected result: nil, actual result: \(accounts)")
+//            ex.fulfill()
+//        }
+//        
+//        let failure: (error: AccountError) -> Void = { (error) -> Void in
+//            XCTAssert(true)
+//            ex.fulfill()
+//        }
+//        
+//        provider.fetchAccounts(failure, success: success)
+//        
+//        waitForExpectationsWithTimeout(10, handler: nil)
     }
 }
