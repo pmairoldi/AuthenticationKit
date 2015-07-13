@@ -34,7 +34,7 @@ public enum ACAccountProvider {
 extension ACAccountProvider: ProviderProtocol {
     
     // MARK: ProviderProtocol Methods
-    public func fetchAccounts(failure: (error: AccountError) -> Void, success: (accounts: [Account]) -> Void) {
+    public func fetchAccounts(failure: (error: AccountError) -> Void, success: (accounts: [AccountType]) -> Void) {
     
         let success: () -> Void = { () -> Void in
             
@@ -82,12 +82,12 @@ extension ACAccountProvider {
         }
     }
     
-    internal func map<T: ACAccountExtension>(accounts: [T]) -> [Account] {
+    internal func map(accounts: [ACAccount]) -> [AccountType] {
         
-        return accounts.reduce([Account](), combine: { (accumulator, element) in
+        return accounts.reduce([AccountType](), combine: { (accumulator, element) in
             
             do {
-                let account: Account = try element.fetchAccountDetails()
+                let account = try element.fetchAccountDetails()
                 
                 var newAccumulator = accumulator
                 newAccumulator.append(account)
@@ -99,7 +99,7 @@ extension ACAccountProvider {
         })
     }
     
-    internal func accounts(store: ACAccountStore = ACAccountStore()) throws -> [Account] {
+    internal func accounts(store: ACAccountStore = ACAccountStore()) throws -> [AccountType] {
         
         guard let accounts = store.accountsWithAccountType(accountType) as! [ACAccount]? where accounts.count > 0 else {
             throw AccountError.NoAccountsFound
@@ -108,7 +108,7 @@ extension ACAccountProvider {
         return map(accounts)
     }
     
-    internal func fetchAccountsClosure(store: ACAccountStore = ACAccountStore()) throws -> [Account] {
+    internal func fetchAccountsClosure(store: ACAccountStore = ACAccountStore()) throws -> [AccountType] {
         return try self.accounts(store)
     }
 }

@@ -4,16 +4,16 @@ import Social
 
 protocol ACAccountExtension {
     
-    func fetchAccountDetails() throws -> Account
+    func fetchAccountDetails() throws -> AccountType
     func preparedRequest(request: SLRequest) throws -> NSURLRequest
-    func fetchAdditionalDetails(url: String) throws -> Account
-    func fetchDefaultDetails() throws -> Account
+    func fetchAdditionalDetails(url: String) throws -> AccountType
+    func fetchDefaultDetails() throws -> AccountType
 }
 
 extension ACAccount: ACAccountExtension {
     
-    func fetchAccountDetails() throws -> Account {
-        
+    func fetchAccountDetails() throws -> AccountType {
+    
         switch try self.serviceType() {
         case SLServiceTypeTwitter:
             return try fetchAdditionalDetails("https://api.twitter.com/1.1/account/verify_credentials.json")
@@ -33,8 +33,8 @@ extension ACAccount: ACAccountExtension {
         return preparedRequest
     }
     
-    func fetchAdditionalDetails(url: String) throws -> Account {
-        
+    func fetchAdditionalDetails(url: String) throws -> AccountType {
+    
         let url = NSURL(string: url)
         let serviceType = try self.serviceType()
         
@@ -42,12 +42,12 @@ extension ACAccount: ACAccountExtension {
         request.account = self
         
         let accessToken = try OAuth.fetchToken(preparedRequest(request))
-        
+            
         return Account(username: self.username, accessToken: accessToken)
     }
     
-    func fetchDefaultDetails() throws -> Account {
-        
+    func fetchDefaultDetails() throws -> AccountType {
+    
         guard let credential = self.credential, let accessToken = credential.oauthToken else {
             throw AccountError.NoAccessToken
         }

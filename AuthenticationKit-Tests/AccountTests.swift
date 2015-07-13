@@ -38,28 +38,4 @@ class AccountTests: XCTestCase {
         
         XCTAssertNotEqual(account1, account2, "account1: \(account1), account2: \(account2)")
     }
-    
-    func testAccountsAccessTokensAreNotEqualLHS() {
-        
-        let account1 = Account(username: "username", accessToken: "accessToken")
-        let account2 = Account(username: "username", accessToken: nil)
-        
-        XCTAssertNotEqual(account1, account2, "account1: \(account1), account2: \(account2)")
-    }
-    
-    func testAccountsAccessTokensAreNotEqualRHS() {
-        
-        let account1 = Account(username: "username", accessToken: nil)
-        let account2 = Account(username: "username", accessToken: "accessToken")
-        
-        XCTAssertNotEqual(account1, account2, "account1: \(account1), account2: \(account2)")
-    }
-    
-    func testAccountAccessTokensAreNil() {
-        
-        let account1 = Account(username: "username", accessToken: nil)
-        let account2 = Account(username: "username", accessToken: nil)
-        
-        XCTAssertEqual(account1, account2, "account1: \(account1), account2: \(account2)")
-    }
 }
