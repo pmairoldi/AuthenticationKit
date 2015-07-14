@@ -34,6 +34,10 @@
 		551AACAA1B542A4200C69400 /* AuthenticationKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5567D5171B4EFF82006D2B3E /* AuthenticationKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		551AACB31B542A5D00C69400 /* AuthenticationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 061BFFB81B50CFCD001AF0D6 /* AuthenticationKit.framework */; };
 		551AACB41B542A5D00C69400 /* AuthenticationKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 061BFFB81B50CFCD001AF0D6 /* AuthenticationKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		556A04F11B555AD3000CB99C /* AccountType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556A04F01B555AD3000CB99C /* AccountType.swift */; };
+		556A04F21B555AD3000CB99C /* AccountType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556A04F01B555AD3000CB99C /* AccountType.swift */; };
+		556A04F41B555B07000CB99C /* AuthenticationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556A04F31B555B07000CB99C /* AuthenticationProvider.swift */; };
+		556A04F51B555B07000CB99C /* AuthenticationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556A04F31B555B07000CB99C /* AuthenticationProvider.swift */; };
 		55A61F751B5412C700E0A1D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A61F741B5412C700E0A1D8 /* AppDelegate.swift */; };
 		55A61F771B5412C700E0A1D8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A61F761B5412C700E0A1D8 /* ViewController.swift */; };
 		55A61F791B5412C700E0A1D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55A61F781B5412C700E0A1D8 /* Assets.xcassets */; };
@@ -165,6 +169,9 @@
 		550507CF1B540D3E009EA49C /* ACAccountProvider-Mac.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ACAccountProvider-Mac.swift"; sourceTree = "<group>"; };
 		550507D51B540EFF009EA49C /* ACAccountProviderTestsMac.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACAccountProviderTestsMac.swift; sourceTree = "<group>"; };
 		5567D5171B4EFF82006D2B3E /* AuthenticationKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AuthenticationKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		556A04EF1B55512B000CB99C /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		556A04F01B555AD3000CB99C /* AccountType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountType.swift; sourceTree = "<group>"; };
+		556A04F31B555B07000CB99C /* AuthenticationProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationProvider.swift; sourceTree = "<group>"; };
 		55A61F721B5412C700E0A1D8 /* Example-Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Example-Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55A61F741B5412C700E0A1D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55A61F761B5412C700E0A1D8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -258,6 +265,8 @@
 			children = (
 				550507C51B540D23009EA49C /* ACAccountProvider */,
 				061BFFD21B50D041001AF0D6 /* AuthenticationKit.swift */,
+				556A04F01B555AD3000CB99C /* AccountType.swift */,
+				556A04F31B555B07000CB99C /* AuthenticationProvider.swift */,
 				06640B071B51FBEA004FE5FE /* OAuth.swift */,
 				061BFFDD1B50D0B7001AF0D6 /* SupportingFiles */,
 			);
@@ -308,6 +317,7 @@
 		5567D50D1B4EFF82006D2B3E = {
 			isa = PBXGroup;
 			children = (
+				556A04EF1B55512B000CB99C /* MyPlayground.playground */,
 				55A61F861B54133500E0A1D8 /* Example-iOS */,
 				55A61F731B5412C700E0A1D8 /* Example-Mac */,
 				061BFFCF1B50D041001AF0D6 /* AuthenticationKit */,
@@ -678,10 +688,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				550507D01B540D3E009EA49C /* ACAccountProvider-Mac.swift in Sources */,
+				556A04F51B555B07000CB99C /* AuthenticationProvider.swift in Sources */,
 				06640B091B51FBEA004FE5FE /* OAuth.swift in Sources */,
 				061BFFD91B50D041001AF0D6 /* AuthenticationKit.swift in Sources */,
 				550507CA1B540D23009EA49C /* ACAccountExtension.swift in Sources */,
 				550507CE1B540D23009EA49C /* ACAccountProvider.swift in Sources */,
+				556A04F21B555AD3000CB99C /* AccountType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -715,10 +727,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				06640B081B51FBEA004FE5FE /* OAuth.swift in Sources */,
+				556A04F41B555B07000CB99C /* AuthenticationProvider.swift in Sources */,
 				061BFFD81B50D041001AF0D6 /* AuthenticationKit.swift in Sources */,
 				550507CB1B540D23009EA49C /* ACAccountProvider-iOS.swift in Sources */,
 				550507C91B540D23009EA49C /* ACAccountExtension.swift in Sources */,
 				550507CD1B540D23009EA49C /* ACAccountProvider.swift in Sources */,
+				556A04F11B555AD3000CB99C /* AccountType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

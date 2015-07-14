@@ -43,7 +43,7 @@ extension ACAccount: ACAccountExtension {
         
         let accessToken = try OAuth.fetchToken(preparedRequest(request))
             
-        return Account(username: self.username, accessToken: accessToken)
+        return TokenAccountType(username: self.username, accessToken: accessToken)
     }
     
     func fetchDefaultDetails() throws -> AccountType {
@@ -52,7 +52,7 @@ extension ACAccount: ACAccountExtension {
             throw AccountError.NoAccessToken
         }
         
-        return Account(username: self.username, accessToken: accessToken)
+        return TokenAccountType(username: self.username, accessToken: accessToken)
     }
 }
 

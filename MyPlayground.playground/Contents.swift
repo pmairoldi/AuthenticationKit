@@ -1,0 +1,4 @@
+import XCPlayground
+import Foundation
+
+XCPSetExecutionShouldContinueIndefinitely()
