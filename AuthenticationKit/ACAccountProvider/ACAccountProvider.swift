@@ -78,7 +78,7 @@ extension ACAccountProvider {
                 return
             }
             
-            failure(error: AccountError.AccessRequestFailed)
+            failure(error: AccountError.NoAccountsFound)
         }
     }
     
