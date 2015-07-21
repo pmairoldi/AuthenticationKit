@@ -9,7 +9,7 @@ public enum AccountError: Int, ErrorType {
     case CreationFailed
     case AuthenticationFailed
     
-    func toNSError() -> NSError {
+    public func toNSError() -> NSError {
         return NSError(domain: AuthenticationKitErrorDomain, code: self.rawValue, userInfo: ["description" : "\(self)"])
     }
 }
