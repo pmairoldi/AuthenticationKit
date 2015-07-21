@@ -34,7 +34,7 @@ public enum ACAccountProvider {
 extension ACAccountProvider: ProviderProtocol {
     
     // MARK: ProviderProtocol Methods
-    public func fetchAccounts(failure: (error: AccountError) -> Void, success: (accounts: [AccountType]) -> Void) {
+    public func fetchAccounts(failure: (error: AccountError) -> Void, success: (accounts: [TokenAccount]) -> Void) {
     
         let success: () -> Void = { () -> Void in
             
@@ -82,9 +82,9 @@ extension ACAccountProvider {
         }
     }
     
-    internal func map(accounts: [ACAccount]) -> [AccountType] {
+    internal func map(accounts: [ACAccount]) -> [TokenAccount] {
         
-        return accounts.reduce([AccountType](), combine: { (accumulator, element) in
+        return accounts.reduce([TokenAccount](), combine: { (accumulator, element) in
             
             do {
                 let account = try element.fetchAccountDetails()
@@ -99,7 +99,7 @@ extension ACAccountProvider {
         })
     }
     
-    internal func accounts(store: ACAccountStore = ACAccountStore()) throws -> [AccountType] {
+    internal func accounts(store: ACAccountStore = ACAccountStore()) throws -> [TokenAccount] {
         
         guard let accounts = store.accountsWithAccountType(accountType) as! [ACAccount]? where accounts.count > 0 else {
             throw AccountError.NoAccountsFound
@@ -108,7 +108,7 @@ extension ACAccountProvider {
         return map(accounts)
     }
     
-    internal func fetchAccountsClosure(store: ACAccountStore = ACAccountStore()) throws -> [AccountType] {
+    internal func fetchAccountsClosure(store: ACAccountStore = ACAccountStore()) throws -> [TokenAccount] {
         return try self.accounts(store)
     }
 }

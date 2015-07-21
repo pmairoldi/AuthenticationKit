@@ -264,7 +264,7 @@ class ACAccountProviderTests: XCTestCase {
         
         let provider = ACAccountProvider.Facebook(appId: "appID", permissions: ["email"], audience: Audience.Everyone)
         
-        let expected = [Account(username: "username", accessToken: "accessToken")]
+        let expected = [TokenAccount(username: "username", accessToken: "accessToken")]
         let actual = provider.map(accounts)
         
         XCTAssertEqual(expected, actual, "expected result: \(expected), actual result: \(actual)")
@@ -282,7 +282,7 @@ class ACAccountProviderTests: XCTestCase {
         
         let provider = ACAccountProvider.Facebook(appId: "appID", permissions: ["email"], audience: Audience.Everyone)
         
-        let expected = [Account]()
+        let expected = [TokenAccount]()
         let actual = provider.map(accounts)
         
         XCTAssertEqual(expected, actual, "expected result: \(expected), actual result: \(actual)")
@@ -334,7 +334,7 @@ class ACAccountProviderTests: XCTestCase {
         let provider = ACAccountProvider.Facebook(appId: "appID", permissions: ["email"], audience: Audience.Everyone)
         
         do {
-            let expected = [Account(username: "username", accessToken: "accessToken")]
+            let expected = [TokenAccount(username: "username", accessToken: "accessToken")]
             let actual = try provider.accounts(MockAccountStore())
             
             XCTAssertEqual(expected, actual, "expected result: \(expected), actual result: \(actual)")
@@ -382,7 +382,7 @@ class ACAccountProviderTests: XCTestCase {
         
         let provider = ACAccountProvider.Facebook(appId: "appID", permissions: ["email"], audience: Audience.Everyone)
         
-        let expected = [Account(username: "username", accessToken: "accessToken")]
+        let expected = [TokenAccount(username: "username", accessToken: "accessToken")]
         
         do {
             let actual = try provider.fetchAccountsClosure(MockAccountStore())

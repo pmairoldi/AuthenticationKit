@@ -15,8 +15,8 @@ class AccountTests: XCTestCase {
     
     func testEqualAccountsFunction() {
         
-        let account1 = Account(username: "username", accessToken: "accessToken")
-        let account2 = Account(username: "username", accessToken: "accessToken")
+        let account1 = TokenAccount(username: "username", accessToken: "accessToken")
+        let account2 = TokenAccount(username: "username", accessToken: "accessToken")
         
         let result = account1 == account2
         
@@ -25,16 +25,16 @@ class AccountTests: XCTestCase {
     
     func testAccountsAreEqual() {
         
-        let account1 = Account(username: "username", accessToken: "accessToken")
-        let account2 = Account(username: "username", accessToken: "accessToken")
+        let account1 = TokenAccount(username: "username", accessToken: "accessToken")
+        let account2 = TokenAccount(username: "username", accessToken: "accessToken")
 
         XCTAssertEqual(account1, account2, "account1: \(account1), account2: \(account2)")
     }
     
     func testAccountsAreNotEqual() {
         
-        let account1 = Account(username: "username", accessToken: "accessToken")
-        let account2 = Account(username: "username", accessToken: "")
+        let account1 = TokenAccount(username: "username", accessToken: "accessToken")
+        let account2 = TokenAccount(username: "username", accessToken: "")
         
         XCTAssertNotEqual(account1, account2, "account1: \(account1), account2: \(account2)")
     }

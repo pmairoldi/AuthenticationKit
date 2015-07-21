@@ -4,15 +4,15 @@ import Social
 
 protocol ACAccountExtension {
     
-    func fetchAccountDetails() throws -> AccountType
+    func fetchAccountDetails() throws -> TokenAccount
     func preparedRequest(request: SLRequest) throws -> NSURLRequest
-    func fetchAdditionalDetails(url: String) throws -> AccountType
-    func fetchDefaultDetails() throws -> AccountType
+    func fetchAdditionalDetails(url: String) throws -> TokenAccount
+    func fetchDefaultDetails() throws -> TokenAccount
 }
 
 extension ACAccount: ACAccountExtension {
     
-    func fetchAccountDetails() throws -> AccountType {
+    func fetchAccountDetails() throws -> TokenAccount {
     
         switch try self.serviceType() {
         case SLServiceTypeTwitter:
@@ -33,7 +33,7 @@ extension ACAccount: ACAccountExtension {
         return preparedRequest
     }
     
-    func fetchAdditionalDetails(url: String) throws -> AccountType {
+    func fetchAdditionalDetails(url: String) throws -> TokenAccount {
     
         let url = NSURL(string: url)
         let serviceType = try self.serviceType()
@@ -43,16 +43,16 @@ extension ACAccount: ACAccountExtension {
         
         let accessToken = try OAuth.fetchToken(preparedRequest(request))
             
-        return TokenAccountType(username: self.username, accessToken: accessToken)
+        return TokenAccount(username: self.username, accessToken: accessToken)
     }
     
-    func fetchDefaultDetails() throws -> AccountType {
+    func fetchDefaultDetails() throws -> TokenAccount {
     
         guard let credential = self.credential, let accessToken = credential.oauthToken else {
             throw AccountError.NoAccessToken
         }
         
-        return TokenAccountType(username: self.username, accessToken: accessToken)
+        return TokenAccount(username: self.username, accessToken: accessToken)
     }
 }
 

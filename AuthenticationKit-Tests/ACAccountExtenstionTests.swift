@@ -167,7 +167,7 @@ class ACAccountExtenstionTests: XCTestCase {
         let account = MockAccount(accountType: ACAccountStore().accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierTwitter), username: "username", accessToken: "accessToken")
         
         do {
-            let expected = Account(username: "username", accessToken: "accessToken")
+            let expected = TokenAccount(username: "username", accessToken: "accessToken")
             let actual = try account.fetchAccountDetails()
             
             XCTAssertEqual(expected, actual, "expected result: \(expected), actual result: \(actual)")
@@ -198,7 +198,7 @@ class ACAccountExtenstionTests: XCTestCase {
         let account = MockAccount(accountType: ACAccountStore().accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierSinaWeibo), username: "username", accessToken: "accessToken")
         
         do {
-            let expected = Account(username: "username", accessToken: "accessToken")
+            let expected = TokenAccount(username: "username", accessToken: "accessToken")
             let actual = try account.fetchAccountDetails()
             
             XCTAssertEqual(expected, actual, "expected result: \(expected), actual result: \(actual)")
@@ -220,7 +220,7 @@ class ACAccountExtenstionTests: XCTestCase {
         let account = MockAccount(accountType: ACAccountStore().accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierFacebook), username: "username", accessToken: "accessToken")
         
         do {
-            let expected = Account(username: "username", accessToken: "accessToken")
+            let expected = TokenAccount(username: "username", accessToken: "accessToken")
             let actual = try account.fetchAccountDetails()
             
             XCTAssertEqual(expected, actual, "expected result: \(expected), actual result: \(actual)")
@@ -309,7 +309,7 @@ class ACAccountExtenstionTests: XCTestCase {
         let account = MockAccount(accountType: ACAccountStore().accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierSinaWeibo), username: "username")
         
         do {
-            let expected = Account(username: "username", accessToken: "accessToken")
+            let expected = TokenAccount(username: "username", accessToken: "accessToken")
             let actual = try account.fetchAdditionalDetails("")
             
             XCTAssertEqual(expected, actual, "expected result: \(expected), actual result: \(actual)")
@@ -360,7 +360,7 @@ class ACAccountExtenstionTests: XCTestCase {
         let account = MockAccount(accountType: ACAccountStore().accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierFacebook), username: "username", accessToken: "accessToken")
         
         do {
-            let expected = Account(username: "username", accessToken: "accessToken")
+            let expected = TokenAccount(username: "username", accessToken: "accessToken")
             let actual = try account.fetchDefaultDetails()
             
             XCTAssertEqual(expected, actual, "expected result: \(expected), actual result: \(actual)")

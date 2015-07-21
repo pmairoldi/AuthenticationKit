@@ -5,7 +5,7 @@ public protocol AccountType {
     var authenticationRequest: NSURLRequest { get }
 }
 
-public class TokenAccountType: AccountType {
+public class TokenAccount: AccountType {
     
     let username: String
     let accessToken: String
@@ -24,9 +24,9 @@ public class TokenAccountType: AccountType {
     }
 }
 
-extension TokenAccountType: Equatable { }
+extension TokenAccount: Equatable { }
 
-public func ==(lhs: TokenAccountType, rhs: TokenAccountType) -> Bool {
+public func ==(lhs: TokenAccount, rhs: TokenAccount) -> Bool {
     
     let usernameEqual = lhs.username == rhs.username
     let accessTokenEqual = lhs.accessToken == rhs.accessToken
@@ -34,7 +34,7 @@ public func ==(lhs: TokenAccountType, rhs: TokenAccountType) -> Bool {
     return usernameEqual && accessTokenEqual
 }
 
-public class EmailAccountType: AccountType {
+public class EmailAccount: AccountType {
     
     let email: String
     let password: String
@@ -53,9 +53,9 @@ public class EmailAccountType: AccountType {
     }
 }
 
-extension EmailAccountType: Equatable { }
+extension EmailAccount: Equatable { }
 
-public func ==(lhs: EmailAccountType, rhs: EmailAccountType) -> Bool {
+public func ==(lhs: EmailAccount, rhs: EmailAccount) -> Bool {
     
     let emailEqual = lhs.email == rhs.email
     let passwordEqual = lhs.password == rhs.password
