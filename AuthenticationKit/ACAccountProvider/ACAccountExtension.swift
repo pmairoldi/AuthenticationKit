@@ -4,23 +4,23 @@ import Social
 
 protocol ACAccountExtension {
     
-    func fetchAccountDetails() throws -> TokenAccount
+    func fetchAccountDetails(provider: ACAccountProvider) throws -> AccountType
     func preparedRequest(request: SLRequest) throws -> NSURLRequest
-    func fetchAdditionalDetails(url: String) throws -> TokenAccount
-    func fetchDefaultDetails() throws -> TokenAccount
+    func fetchAdditionalDetails(provider: ACAccountProvider, url: String) throws -> AccountType
+    func fetchDefaultDetails(provider: ACAccountProvider) throws -> AccountType
 }
 
 extension ACAccount: ACAccountExtension {
     
-    func fetchAccountDetails() throws -> TokenAccount {
+    func fetchAccountDetails(provider: ACAccountProvider) throws -> AccountType {
     
         switch try self.serviceType() {
         case SLServiceTypeTwitter:
-            return try fetchAdditionalDetails("https://api.twitter.com/1.1/account/verify_credentials.json")
+            return try fetchAdditionalDetails(provider, url: "https://api.twitter.com/1.1/account/verify_credentials.json")
         case SLServiceTypeSinaWeibo:
-            return try fetchAdditionalDetails("http://api.t.sina.com.cn/account/verify_credentials.json")
+            return try fetchAdditionalDetails(provider, url: "http://api.t.sina.com.cn/account/verify_credentials.json")
         default:
-            return try fetchDefaultDetails()
+            return try fetchDefaultDetails(provider)
         }
     }
     
@@ -33,7 +33,7 @@ extension ACAccount: ACAccountExtension {
         return preparedRequest
     }
     
-    func fetchAdditionalDetails(url: String) throws -> TokenAccount {
+    func fetchAdditionalDetails(provider: ACAccountProvider, url: String) throws -> AccountType {
     
         let url = NSURL(string: url)
         let serviceType = try self.serviceType()
@@ -43,16 +43,16 @@ extension ACAccount: ACAccountExtension {
         
         let accessToken = try OAuth.fetchToken(preparedRequest(request))
             
-        return TokenAccount(username: self.username, accessToken: accessToken)
+        return accountForProvider(provider, username: self.username, accessToken: accessToken)
     }
     
-    func fetchDefaultDetails() throws -> TokenAccount {
+    func fetchDefaultDetails(provider: ACAccountProvider) throws -> AccountType {
     
         guard let credential = self.credential, let accessToken = credential.oauthToken else {
             throw AccountError.NoAccessToken
         }
         
-        return TokenAccount(username: self.username, accessToken: accessToken)
+        return accountForProvider(provider, username: self.username, accessToken: accessToken)
     }
 }
 

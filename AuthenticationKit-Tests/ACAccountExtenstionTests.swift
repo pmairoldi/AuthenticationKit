@@ -167,8 +167,8 @@ class ACAccountExtenstionTests: XCTestCase {
         let account = MockAccount(accountType: ACAccountStore().accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierTwitter), username: "username", accessToken: "accessToken")
         
         do {
-            let expected = TokenAccount(username: "username", accessToken: "accessToken")
-            let actual = try account.fetchAccountDetails()
+            let expected = AccountType.Twitter(username: "username", accessToken: "accessToken")
+            let actual = try account.fetchAccountDetails(ACAccountProvider.Twitter)
             
             XCTAssertEqual(expected, actual, "expected result: \(expected), actual result: \(actual)")
         } catch {
@@ -198,8 +198,8 @@ class ACAccountExtenstionTests: XCTestCase {
         let account = MockAccount(accountType: ACAccountStore().accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierSinaWeibo), username: "username", accessToken: "accessToken")
         
         do {
-            let expected = TokenAccount(username: "username", accessToken: "accessToken")
-            let actual = try account.fetchAccountDetails()
+            let expected = AccountType.SinaWeibo(email: "username", accessToken: "accessToken")
+            let actual = try account.fetchAccountDetails(ACAccountProvider.SinaWeibo)
             
             XCTAssertEqual(expected, actual, "expected result: \(expected), actual result: \(actual)")
         } catch {
@@ -220,8 +220,8 @@ class ACAccountExtenstionTests: XCTestCase {
         let account = MockAccount(accountType: ACAccountStore().accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierFacebook), username: "username", accessToken: "accessToken")
         
         do {
-            let expected = TokenAccount(username: "username", accessToken: "accessToken")
-            let actual = try account.fetchAccountDetails()
+            let expected = AccountType.Facebook(email: "username", accessToken: "accessToken")
+            let actual = try account.fetchAccountDetails(ACAccountProvider.Facebook(appId: "appId", permissions: ["email"], audience: Audience.Everyone))
             
             XCTAssertEqual(expected, actual, "expected result: \(expected), actual result: \(actual)")
         } catch {
@@ -309,8 +309,8 @@ class ACAccountExtenstionTests: XCTestCase {
         let account = MockAccount(accountType: ACAccountStore().accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierSinaWeibo), username: "username")
         
         do {
-            let expected = TokenAccount(username: "username", accessToken: "accessToken")
-            let actual = try account.fetchAdditionalDetails("")
+            let expected = AccountType.SinaWeibo(email: "username", accessToken: "accessToken")
+            let actual = try account.fetchAdditionalDetails(ACAccountProvider.SinaWeibo, url: "")
             
             XCTAssertEqual(expected, actual, "expected result: \(expected), actual result: \(actual)")
         } catch {
@@ -339,7 +339,7 @@ class ACAccountExtenstionTests: XCTestCase {
         let account = MockAccount(accountType: ACAccountStore().accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierSinaWeibo), username: "username")
         
         do {
-            try account.fetchAdditionalDetails("")
+            try account.fetchAdditionalDetails(ACAccountProvider.SinaWeibo, url: "")
             XCTFail()
         } catch {
             XCTAssert(true)
@@ -360,8 +360,8 @@ class ACAccountExtenstionTests: XCTestCase {
         let account = MockAccount(accountType: ACAccountStore().accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierFacebook), username: "username", accessToken: "accessToken")
         
         do {
-            let expected = TokenAccount(username: "username", accessToken: "accessToken")
-            let actual = try account.fetchDefaultDetails()
+            let expected = AccountType.Facebook(email: "username", accessToken: "accessToken")
+            let actual = try account.fetchDefaultDetails(ACAccountProvider.Facebook(appId: "appId", permissions: ["email"], audience: Audience.Everyone))
             
             XCTAssertEqual(expected, actual, "expected result: \(expected), actual result: \(actual)")
         } catch {
@@ -382,7 +382,7 @@ class ACAccountExtenstionTests: XCTestCase {
         let account = MockAccount(accountType: ACAccountStore().accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierFacebook), username: "username", accessToken: "accessToken")
         
         do {
-            try account.fetchDefaultDetails()
+            try account.fetchDefaultDetails(ACAccountProvider.Facebook(appId: "appId", permissions: ["email"], audience: Audience.Everyone))
             XCTFail()
         } catch {
             XCTAssert(true)

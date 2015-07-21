@@ -7,7 +7,7 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let success: (accounts: [Account]) -> Void = { (accounts) -> Void in
+        let success: (accounts: [AccountType]) -> Void = { (accounts) -> Void in
             print(accounts)
         }
         

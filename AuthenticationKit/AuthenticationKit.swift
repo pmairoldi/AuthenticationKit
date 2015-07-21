@@ -15,5 +15,5 @@ public enum Audience {
 }
 
 public protocol ProviderProtocol {
-    func fetchAccounts(failure: (error: AccountError) -> Void, success: (accounts: [TokenAccount]) -> Void)
+    func fetchAccounts(failure: (error: AccountError) -> Void, success: (accounts: [AccountType]) -> Void)
 }

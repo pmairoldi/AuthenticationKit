@@ -3,7 +3,7 @@ import Foundation
 public typealias AuthenticationProvierFailure = (error: AccountError) -> Void
 public typealias AuthenticationProvierSuccess = (statusCode: Int, response: NSURLResponse, data: NSData?) -> Void
 
-public class AuthenticationProvider<T: AccountType> {
+public class AuthenticationProvider<T: AccountProtocol> {
     
     let account: T
     
