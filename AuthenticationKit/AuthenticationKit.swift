@@ -1,11 +1,17 @@
 import Foundation
 
-public enum AccountError: ErrorType {
+public let AuthenticationKitErrorDomain = "AuthenticationKit"
+
+public enum AccountError: Int, ErrorType {
     case NoAccountsFound
     case AccessRequestFailed
     case NoAccessToken
     case CreationFailed
     case AuthenticationFailed
+    
+    func toNSError() -> NSError {
+        return NSError(domain: AuthenticationKitErrorDomain, code: self.rawValue, userInfo: ["description" : "\(self)"])
+    }
 }
 
 public enum Audience {
