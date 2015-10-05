@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		061B00131B50D3D0001AF0D6 /* ACAccountProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061B000E1B50D3D0001AF0D6 /* ACAccountProviderTests.swift */; };
 		061B00141B50D3D0001AF0D6 /* ACAccountProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061B000E1B50D3D0001AF0D6 /* ACAccountProviderTests.swift */; };
-		061BFFD81B50D041001AF0D6 /* AuthenticationKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061BFFD21B50D041001AF0D6 /* AuthenticationKit.swift */; };
-		061BFFD91B50D041001AF0D6 /* AuthenticationKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061BFFD21B50D041001AF0D6 /* AuthenticationKit.swift */; };
 		061BFFE01B50D0B7001AF0D6 /* AuthenticationKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 061BFFDE1B50D0B7001AF0D6 /* AuthenticationKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		061BFFE11B50D0B7001AF0D6 /* AuthenticationKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 061BFFDE1B50D0B7001AF0D6 /* AuthenticationKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		061BFFF01B50D354001AF0D6 /* AuthenticationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5567D5171B4EFF82006D2B3E /* AuthenticationKit.framework */; };
@@ -20,23 +18,13 @@
 		0633FB2B1B5DF6BA00C002FC /* AccountTestsMac.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0633FB2A1B5DF6BA00C002FC /* AccountTestsMac.swift */; };
 		0651E07D1B50D863008DFE02 /* XCTAssertEqual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0651E07C1B50D863008DFE02 /* XCTAssertEqual.swift */; };
 		0651E07E1B50D863008DFE02 /* XCTAssertEqual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0651E07C1B50D863008DFE02 /* XCTAssertEqual.swift */; };
-		06640B081B51FBEA004FE5FE /* OAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06640B071B51FBEA004FE5FE /* OAuth.swift */; };
-		06640B091B51FBEA004FE5FE /* OAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06640B071B51FBEA004FE5FE /* OAuth.swift */; };
 		06DF35C61B520F7000B62CEA /* ACAccountExtenstionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DF35C51B520F7000B62CEA /* ACAccountExtenstionTests.swift */; };
 		06DF35C71B520F7000B62CEA /* ACAccountExtenstionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DF35C51B520F7000B62CEA /* ACAccountExtenstionTests.swift */; };
-		550507C91B540D23009EA49C /* ACAccountExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550507C61B540D23009EA49C /* ACAccountExtension.swift */; };
-		550507CA1B540D23009EA49C /* ACAccountExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550507C61B540D23009EA49C /* ACAccountExtension.swift */; };
-		550507CB1B540D23009EA49C /* ACAccountProvider-iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550507C71B540D23009EA49C /* ACAccountProvider-iOS.swift */; };
-		550507CD1B540D23009EA49C /* ACAccountProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550507C81B540D23009EA49C /* ACAccountProvider.swift */; };
-		550507CE1B540D23009EA49C /* ACAccountProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550507C81B540D23009EA49C /* ACAccountProvider.swift */; };
-		550507D01B540D3E009EA49C /* ACAccountProvider-Mac.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550507CF1B540D3E009EA49C /* ACAccountProvider-Mac.swift */; };
 		550507D61B540EFF009EA49C /* ACAccountProviderTestsMac.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550507D51B540EFF009EA49C /* ACAccountProviderTestsMac.swift */; };
 		551AACA91B542A4200C69400 /* AuthenticationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5567D5171B4EFF82006D2B3E /* AuthenticationKit.framework */; };
 		551AACAA1B542A4200C69400 /* AuthenticationKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5567D5171B4EFF82006D2B3E /* AuthenticationKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		551AACB31B542A5D00C69400 /* AuthenticationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 061BFFB81B50CFCD001AF0D6 /* AuthenticationKit.framework */; };
 		551AACB41B542A5D00C69400 /* AuthenticationKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 061BFFB81B50CFCD001AF0D6 /* AuthenticationKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		556A04F11B555AD3000CB99C /* AccountType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556A04F01B555AD3000CB99C /* AccountType.swift */; };
-		556A04F21B555AD3000CB99C /* AccountType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556A04F01B555AD3000CB99C /* AccountType.swift */; };
 		55A61F751B5412C700E0A1D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A61F741B5412C700E0A1D8 /* AppDelegate.swift */; };
 		55A61F771B5412C700E0A1D8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A61F761B5412C700E0A1D8 /* ViewController.swift */; };
 		55A61F791B5412C700E0A1D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55A61F781B5412C700E0A1D8 /* Assets.xcassets */; };
@@ -48,6 +36,20 @@
 		55A61F921B54133500E0A1D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55A61F901B54133500E0A1D8 /* LaunchScreen.storyboard */; };
 		55AD1C1E1B54351C001241A9 /* OAuthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AD1C1D1B54351C001241A9 /* OAuthTests.swift */; };
 		55AD1C1F1B54351C001241A9 /* OAuthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AD1C1D1B54351C001241A9 /* OAuthTests.swift */; };
+		55B80CD61BC2CBC300D6F96B /* ACAccountExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B80CD01BC2CBC300D6F96B /* ACAccountExtension.swift */; settings = {ASSET_TAGS = (); }; };
+		55B80CD71BC2CBC300D6F96B /* ACAccountExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B80CD01BC2CBC300D6F96B /* ACAccountExtension.swift */; settings = {ASSET_TAGS = (); }; };
+		55B80CD81BC2CBC300D6F96B /* ACAccountProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B80CD11BC2CBC300D6F96B /* ACAccountProvider.swift */; settings = {ASSET_TAGS = (); }; };
+		55B80CD91BC2CBC300D6F96B /* ACAccountProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B80CD11BC2CBC300D6F96B /* ACAccountProvider.swift */; settings = {ASSET_TAGS = (); }; };
+		55B80CDA1BC2CBC300D6F96B /* AccountType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B80CD21BC2CBC300D6F96B /* AccountType.swift */; settings = {ASSET_TAGS = (); }; };
+		55B80CDB1BC2CBC300D6F96B /* AccountType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B80CD21BC2CBC300D6F96B /* AccountType.swift */; settings = {ASSET_TAGS = (); }; };
+		55B80CDC1BC2CBC300D6F96B /* AuthenticationKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B80CD31BC2CBC300D6F96B /* AuthenticationKit.swift */; settings = {ASSET_TAGS = (); }; };
+		55B80CDD1BC2CBC300D6F96B /* AuthenticationKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B80CD31BC2CBC300D6F96B /* AuthenticationKit.swift */; settings = {ASSET_TAGS = (); }; };
+		55B80CDE1BC2CBC300D6F96B /* AuthenticationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B80CD41BC2CBC300D6F96B /* AuthenticationProvider.swift */; settings = {ASSET_TAGS = (); }; };
+		55B80CDF1BC2CBC300D6F96B /* AuthenticationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B80CD41BC2CBC300D6F96B /* AuthenticationProvider.swift */; settings = {ASSET_TAGS = (); }; };
+		55B80CE01BC2CBC300D6F96B /* OAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B80CD51BC2CBC300D6F96B /* OAuth.swift */; settings = {ASSET_TAGS = (); }; };
+		55B80CE11BC2CBC300D6F96B /* OAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B80CD51BC2CBC300D6F96B /* OAuth.swift */; settings = {ASSET_TAGS = (); }; };
+		55B80CE41BC2CBCB00D6F96B /* ACAccountProvider-iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B80CE31BC2CBCB00D6F96B /* ACAccountProvider-iOS.swift */; settings = {ASSET_TAGS = (); }; };
+		55B80CE71BC2CBD400D6F96B /* ACAccountProvider-Mac.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B80CE61BC2CBD400D6F96B /* ACAccountProvider-Mac.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -152,7 +154,6 @@
 		061B000E1B50D3D0001AF0D6 /* ACAccountProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACAccountProviderTests.swift; sourceTree = "<group>"; };
 		061B00111B50D3D0001AF0D6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		061BFFB81B50CFCD001AF0D6 /* AuthenticationKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AuthenticationKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		061BFFD21B50D041001AF0D6 /* AuthenticationKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AuthenticationKit.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		061BFFDE1B50D0B7001AF0D6 /* AuthenticationKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticationKit.h; sourceTree = "<group>"; };
 		061BFFDF1B50D0B7001AF0D6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		061BFFEB1B50D354001AF0D6 /* AuthenticationKit-iOS-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AuthenticationKit-iOS-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,17 +162,10 @@
 		0633FB2A1B5DF6BA00C002FC /* AccountTestsMac.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountTestsMac.swift; sourceTree = "<group>"; };
 		0651E07C1B50D863008DFE02 /* XCTAssertEqual.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTAssertEqual.swift; sourceTree = "<group>"; };
 		06640ADE1B51748F004FE5FE /* Result.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Result.xcodeproj; path = Carthage/Checkouts/Result/Result.xcodeproj; sourceTree = "<group>"; };
-		06640B071B51FBEA004FE5FE /* OAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuth.swift; sourceTree = "<group>"; };
 		06DF35C51B520F7000B62CEA /* ACAccountExtenstionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACAccountExtenstionTests.swift; sourceTree = "<group>"; };
-		550507C61B540D23009EA49C /* ACAccountExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ACAccountExtension.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		550507C71B540D23009EA49C /* ACAccountProvider-iOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ACAccountProvider-iOS.swift"; sourceTree = "<group>"; };
-		550507C81B540D23009EA49C /* ACAccountProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ACAccountProvider.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		550507CF1B540D3E009EA49C /* ACAccountProvider-Mac.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ACAccountProvider-Mac.swift"; sourceTree = "<group>"; };
 		550507D51B540EFF009EA49C /* ACAccountProviderTestsMac.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACAccountProviderTestsMac.swift; sourceTree = "<group>"; };
 		5567D5171B4EFF82006D2B3E /* AuthenticationKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AuthenticationKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		556A04EF1B55512B000CB99C /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
-		556A04F01B555AD3000CB99C /* AccountType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountType.swift; sourceTree = "<group>"; };
-		556A04F31B555B07000CB99C /* AuthenticationProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationProvider.swift; sourceTree = "<group>"; };
 		55A61F721B5412C700E0A1D8 /* Example-Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Example-Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55A61F741B5412C700E0A1D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55A61F761B5412C700E0A1D8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -186,6 +180,14 @@
 		55A61F911B54133500E0A1D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		55A61F931B54133500E0A1D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55AD1C1D1B54351C001241A9 /* OAuthTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthTests.swift; sourceTree = "<group>"; };
+		55B80CD01BC2CBC300D6F96B /* ACAccountExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACAccountExtension.swift; sourceTree = "<group>"; };
+		55B80CD11BC2CBC300D6F96B /* ACAccountProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACAccountProvider.swift; sourceTree = "<group>"; };
+		55B80CD21BC2CBC300D6F96B /* AccountType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountType.swift; sourceTree = "<group>"; };
+		55B80CD31BC2CBC300D6F96B /* AuthenticationKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationKit.swift; sourceTree = "<group>"; };
+		55B80CD41BC2CBC300D6F96B /* AuthenticationProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationProvider.swift; sourceTree = "<group>"; };
+		55B80CD51BC2CBC300D6F96B /* OAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuth.swift; sourceTree = "<group>"; };
+		55B80CE31BC2CBCB00D6F96B /* ACAccountProvider-iOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ACAccountProvider-iOS.swift"; sourceTree = "<group>"; };
+		55B80CE61BC2CBD400D6F96B /* ACAccountProvider-Mac.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ACAccountProvider-Mac.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,11 +266,9 @@
 		061BFFCF1B50D041001AF0D6 /* AuthenticationKit */ = {
 			isa = PBXGroup;
 			children = (
-				550507C51B540D23009EA49C /* ACAccountProvider */,
-				061BFFD21B50D041001AF0D6 /* AuthenticationKit.swift */,
-				556A04F01B555AD3000CB99C /* AccountType.swift */,
-				556A04F31B555B07000CB99C /* AuthenticationProvider.swift */,
-				06640B071B51FBEA004FE5FE /* OAuth.swift */,
+				55B80CE51BC2CBD400D6F96B /* Mac */,
+				55B80CE21BC2CBCB00D6F96B /* iOS */,
+				55B80CCF1BC2CBC300D6F96B /* Core */,
 				061BFFDD1B50D0B7001AF0D6 /* SupportingFiles */,
 			);
 			path = AuthenticationKit;
@@ -302,17 +302,6 @@
 				06640AF21B51748F004FE5FE /* Result-watchOSTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		550507C51B540D23009EA49C /* ACAccountProvider */ = {
-			isa = PBXGroup;
-			children = (
-				550507C71B540D23009EA49C /* ACAccountProvider-iOS.swift */,
-				550507CF1B540D3E009EA49C /* ACAccountProvider-Mac.swift */,
-				550507C81B540D23009EA49C /* ACAccountProvider.swift */,
-				550507C61B540D23009EA49C /* ACAccountExtension.swift */,
-			);
-			path = ACAccountProvider;
 			sourceTree = "<group>";
 		};
 		5567D50D1B4EFF82006D2B3E = {
@@ -364,6 +353,35 @@
 				55A61F931B54133500E0A1D8 /* Info.plist */,
 			);
 			path = "Example-iOS";
+			sourceTree = "<group>";
+		};
+		55B80CCF1BC2CBC300D6F96B /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				55B80CD01BC2CBC300D6F96B /* ACAccountExtension.swift */,
+				55B80CD11BC2CBC300D6F96B /* ACAccountProvider.swift */,
+				55B80CD21BC2CBC300D6F96B /* AccountType.swift */,
+				55B80CD31BC2CBC300D6F96B /* AuthenticationKit.swift */,
+				55B80CD41BC2CBC300D6F96B /* AuthenticationProvider.swift */,
+				55B80CD51BC2CBC300D6F96B /* OAuth.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		55B80CE21BC2CBCB00D6F96B /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				55B80CE31BC2CBCB00D6F96B /* ACAccountProvider-iOS.swift */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		55B80CE51BC2CBD400D6F96B /* Mac */ = {
+			isa = PBXGroup;
+			children = (
+				55B80CE61BC2CBD400D6F96B /* ACAccountProvider-Mac.swift */,
+			);
+			path = Mac;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -657,12 +675,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				550507D01B540D3E009EA49C /* ACAccountProvider-Mac.swift in Sources */,
-				06640B091B51FBEA004FE5FE /* OAuth.swift in Sources */,
-				061BFFD91B50D041001AF0D6 /* AuthenticationKit.swift in Sources */,
-				550507CA1B540D23009EA49C /* ACAccountExtension.swift in Sources */,
-				550507CE1B540D23009EA49C /* ACAccountProvider.swift in Sources */,
-				556A04F21B555AD3000CB99C /* AccountType.swift in Sources */,
+				55B80CE71BC2CBD400D6F96B /* ACAccountProvider-Mac.swift in Sources */,
+				55B80CD91BC2CBC300D6F96B /* ACAccountProvider.swift in Sources */,
+				55B80CDB1BC2CBC300D6F96B /* AccountType.swift in Sources */,
+				55B80CDF1BC2CBC300D6F96B /* AuthenticationProvider.swift in Sources */,
+				55B80CE11BC2CBC300D6F96B /* OAuth.swift in Sources */,
+				55B80CDD1BC2CBC300D6F96B /* AuthenticationKit.swift in Sources */,
+				55B80CD71BC2CBC300D6F96B /* ACAccountExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -696,12 +715,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06640B081B51FBEA004FE5FE /* OAuth.swift in Sources */,
-				061BFFD81B50D041001AF0D6 /* AuthenticationKit.swift in Sources */,
-				550507CB1B540D23009EA49C /* ACAccountProvider-iOS.swift in Sources */,
-				550507C91B540D23009EA49C /* ACAccountExtension.swift in Sources */,
-				550507CD1B540D23009EA49C /* ACAccountProvider.swift in Sources */,
-				556A04F11B555AD3000CB99C /* AccountType.swift in Sources */,
+				55B80CE41BC2CBCB00D6F96B /* ACAccountProvider-iOS.swift in Sources */,
+				55B80CD81BC2CBC300D6F96B /* ACAccountProvider.swift in Sources */,
+				55B80CDA1BC2CBC300D6F96B /* AccountType.swift in Sources */,
+				55B80CDE1BC2CBC300D6F96B /* AuthenticationProvider.swift in Sources */,
+				55B80CE01BC2CBC300D6F96B /* OAuth.swift in Sources */,
+				55B80CDC1BC2CBC300D6F96B /* AuthenticationKit.swift in Sources */,
+				55B80CD61BC2CBC300D6F96B /* ACAccountExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
