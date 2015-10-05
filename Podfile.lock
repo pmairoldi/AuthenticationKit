@@ -1,0 +1,14 @@
+PODS:
+  - AuthenticationKit (0.2.0)
+
+DEPENDENCIES:
+  - AuthenticationKit (from `./`)
+
+EXTERNAL SOURCES:
+  AuthenticationKit:
+    :path: "./"
+
+SPEC CHECKSUMS:
+  AuthenticationKit: 5f347f2109117cb186af3f70e43bd715c927474e
+
+COCOAPODS: 0.38.2
